@@ -4,6 +4,8 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.U2D;
 
+public enum StatType { Hp, Atk, Spd, DmgReduction, ExpMult, EnergyMult }
+
 public static class Global {
     #nullable enable
     public static T FindComponent<T>(GameObject obj) {
@@ -22,11 +24,19 @@ public static class Global {
         return returnVal;
         
     }
+    public static void Fade(GameObject obj, float time) {
+        Fade(FindComponent<SpriteRenderer>(obj), time);
+    }
+    public static void Appear(GameObject obj, float time) {
+        Appear(FindComponent<SpriteRenderer>(obj), time);
+    }
     public static void Fade(SpriteRenderer renderer, float time) {
-        //LeanTween.value(renderer.gameObject, (float val)=>{SetAlpha(renderer, val);}, renderer.color.a, 0, time);
+        if (renderer == null) return;
+        LeanTween.value(renderer.gameObject, (float val)=>{SetAlpha(renderer, val);}, renderer.color.a, 0, time);
     }
     public static void Appear(SpriteRenderer renderer, float time) {
-        //LeanTween.value(renderer.gameObject, (float val)=>{SetAlpha(renderer, val);}, 0, 1, time);
+        if (renderer == null) return;
+        LeanTween.value(renderer.gameObject, (float val)=>{SetAlpha(renderer, val);}, 0, 1, time);
     }
     public static bool SetAlpha(GameObject obj, float alpha) {
         bool spriteAlpha = SetAlpha(FindComponent<SpriteRenderer>(obj), alpha);

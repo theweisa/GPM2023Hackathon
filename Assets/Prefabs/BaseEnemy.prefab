@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6505067015010931436}
   - component: {fileID: 1731266932711159159}
   - component: {fileID: 2888750456022532576}
-  m_Layer: 0
+  - component: {fileID: 1468997216415392225}
+  m_Layer: 6
   m_Name: BaseEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1393273651288643045}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.40366107, y: 2.6212182, z: -0.32053182}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47,8 +48,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719c8cc3f49c244b894caa30852ff05f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  moveSpeed: 2
+  stats:
+  - type: 0
+    value: 10
+    baseValue: 0
+  - type: 1
+    value: 3
+    baseValue: 0
+  - type: 2
+    value: 2
+    baseValue: 0
+  rb: {fileID: 1731266932711159159}
+  canMove: 1
+  energyYield: 100
+  expYield: 95
+  target: {fileID: 0}
 --- !u!50 &1731266932711159159
 Rigidbody2D:
   serializedVersion: 4
@@ -105,12 +119,37 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 3, y: 3}
   m_Direction: 0
+--- !u!114 &1468997216415392225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393273651288643045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9df14e2363f747c384c2ff902380bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  host: {fileID: 0}
+  contactedDamageables: []
+  hitDamageables: []
+  damageScaling: 1
+  hasLifetime: 0
+  lifetime: -1
+  baseDamageScaling: 0
+  damage: 0
+  active: 1
+  damageOverTime: 1
+  destroyOnContact: 0
+  hitRate: 0.5
 --- !u!1 &3045406860053591573
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8446522471649930153}
   - component: {fileID: 564595109174636083}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
