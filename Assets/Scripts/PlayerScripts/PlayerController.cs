@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     Vector2 fireDirection;
     
     float weaponRadius;
+    [HideInInspector] public Transform firePoint;
+    [HideInInspector] public BaseDamageSource holdDmgRef;
     
 
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
         rb = rb ? rb : Global.FindComponent<Rigidbody2D>(gameObject);
         combatant = combatant ? combatant : Global.FindComponent<PlayerCombatant>(gameObject);
         weaponRadius = weapon.localPosition.magnitude;
+        firePoint = weapon.Find("FirePoint").transform;
     }
 
     void SetWeaponPosition() {
@@ -46,11 +49,18 @@ public class PlayerController : MonoBehaviour
         moveDirection = context.ReadValue<Vector2>();
     }
     public void Fire(InputAction.CallbackContext context) {
-        if (!context.started) return;
-        //Instantiate()
+        if (context.started) {
+            BaseDamageSource melee = Instantiate(suckMelee, firePoint.position, weapon.rotation, weapon).GetComponent<BaseDamageSource>();
+            melee.Init(combatant);
+            holdDmgRef = melee;
+        }
+        else if (context.canceled && holdDmgRef) {
+            StartCoroutine(holdDmgRef.OnDeath());
+        }
     }
 
     void ApplyMovement() {
+        if (!combatant.canMove) return;
         rb.velocity = moveDirection*combatant.GetStatValue(StatType.Spd);
         //rb.AddForce(Time.deltaTime*moveDirection*movementSpeed);
     }

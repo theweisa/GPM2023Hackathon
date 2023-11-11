@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class BaseMelee : BaseDamageSource
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public virtual void FixedUpdate() {
+        if (host.gameObject.CompareTag("Player")) {
+            transform.position = PlayerManager.Instance.controller.firePoint.position;
+        }
     }
 }
