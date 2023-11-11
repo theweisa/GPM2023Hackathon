@@ -23,8 +23,8 @@ public class TerrainManager : MonoBehaviour{
     // Check the player's current grid position. If it changes, update the rendered chunks
     void Update(){
         currentGridPos = PosToGrid(player.transform.position);
-        for (float x=currentGridPos.x-renderDistance+1; x<currentGridPos.x+renderDistance; x++){
-            for (float y=currentGridPos.y-renderDistance+1; y<currentGridPos.y+renderDistance; y++){
+        for (float x=currentGridPos.x-renderDistance; x<currentGridPos.x+renderDistance+1; x++){
+            for (float y=currentGridPos.y-renderDistance; y<currentGridPos.y+renderDistance+1; y++){
                 GenerateChunk(x, y);
             }
         }

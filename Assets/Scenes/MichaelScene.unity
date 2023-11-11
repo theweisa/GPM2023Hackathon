@@ -150,6 +150,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3412681458278518862, guid: e079d9ceeaa7c450e8d022b84d562958, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412681458278518862, guid: e079d9ceeaa7c450e8d022b84d562958, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412681458278518862, guid: e079d9ceeaa7c450e8d022b84d562958, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4990824905015203236, guid: e079d9ceeaa7c450e8d022b84d562958, type: 3}
       propertyPath: rb
       value: 
@@ -405,7 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 33078681}
   chunkSize: 20
-  renderDistance: 3
+  renderDistance: 2
   validChunks:
   - {fileID: 1159413878907473297, guid: 8ea309d5fccfc684e88523b43350f42b, type: 3}
   spawnedChunks: []
