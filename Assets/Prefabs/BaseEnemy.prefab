@@ -62,6 +62,7 @@ MonoBehaviour:
   canMove: 1
   energyYield: 100
   expYield: 95
+  expDrop: {fileID: 7587408511367714646, guid: bd27f675a0937b3428ad32c18971b3d0, type: 3}
   target: {fileID: 0}
 --- !u!50 &1731266932711159159
 Rigidbody2D:

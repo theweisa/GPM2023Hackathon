@@ -774,12 +774,24 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: spawnCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: spawnTimer
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: spawnRadius
-      value: 30
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: waveInterval
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: spawnInterval
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4950192282763583345, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: m_LocalPosition.x

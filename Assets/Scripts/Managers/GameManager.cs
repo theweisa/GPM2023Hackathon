@@ -7,17 +7,25 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class GameManager : UnitySingleton<GameManager>
 {
-    [SerializeField] float waveTimer;
+    [SerializeField] float waveInterval; //user sets the values of how long it takes to trigger the wave & spawn rate
+    [SerializeField] float spawnInterval;
+
+    [SerializeField] int spawnCount; //user sets how many enemies should get spawned during a wave
+    [SerializeField] int curSpawnNum;
+
+    [SerializeField] float waveTimer; //public variables so you can see if the timer is working correctly
     [SerializeField] float spawnTimer;
-    [SerializeField] float spawnRadius;
+    [SerializeField] float spawnRadius; //size of the circle that spawns enemies
 
     [SerializeField] GameObject myPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        //waveTimer = 60f;
-        //spawnTimer = 1f;
+        //both timers should activate on game start
+        waveTimer = 0;
+        spawnTimer = 0;
+        curSpawnNum = 0;
     }
 
     // Update is called once per frame
@@ -25,25 +33,34 @@ public class GameManager : UnitySingleton<GameManager>
     {
         //every minute, create a wave
         waveTimer -= Time.deltaTime;
-        
-        
+               
         //every wave has a spawn rate and an enemy quotient::: Level 1 spawns 50 enemies at 4 enemies per second
         if(waveTimer <= 0f)
         {
-            print("next wave");
-
-            spawnTimer -= Time.deltaTime;
-            
             //every spawn rate interval, spawn an enemy until we hit the quotient
             if(spawnTimer <= 0f)
             {
-                print("new enemy");
-                //Instantiate: enemyPrefab at randomCirclePos()
+                print("NEW ENEMY");
+                //spawn enemy at random location on a circle defined by user-given radius
                 Vector2 newPos = randomCirclePos(new Vector2(0,0), spawnRadius);
                 Instantiate(myPrefab, new Vector3(newPos.x, newPos.y, 1), Quaternion.identity);
-                spawnTimer = 1f;
+                spawnTimer = spawnInterval;
+
+                curSpawnNum += 1;
+                //reset spawn timer
+                spawnTimer = spawnInterval;
             }
-            waveTimer = 60f;
+            //check if we've hit our quotient
+            if(curSpawnNum == spawnCount)
+            {
+                curSpawnNum = 0;
+                waveTimer = waveInterval; //reset the wave timer
+                print("NEXT WAVE");
+            }
+            else
+            {
+                spawnTimer -= Time.deltaTime;
+            }
         }
     }
 
