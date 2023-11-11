@@ -278,6 +278,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2922194070680463736, guid: e079d9ceeaa7c450e8d022b84d562958, type: 3}
   m_PrefabInstance: {fileID: 10330291275761797}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1124347007 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4990824905015203236, guid: e079d9ceeaa7c450e8d022b84d562958, type: 3}
+  m_PrefabInstance: {fileID: 10330291275761797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124347004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee26770f29a00415085ad2504f8de649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &1124347008 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 5088666027354113107, guid: e079d9ceeaa7c450e8d022b84d562958, type: 3}
@@ -296,6 +307,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  stats:
+  - type: 0
+    value: 0
+    baseValue: 0
 --- !u!1001 &10330291275761797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308,6 +323,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4472327011349739947, guid: e079d9ceeaa7c450e8d022b84d562958, type: 3}
+      propertyPath: combatant
+      value: 
+      objectReference: {fileID: 1124347010}
+    - target: {fileID: 4472327011349739947, guid: e079d9ceeaa7c450e8d022b84d562958, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1124347007}
     - target: {fileID: 4990824905015203236, guid: e079d9ceeaa7c450e8d022b84d562958, type: 3}
       propertyPath: rb
       value: 

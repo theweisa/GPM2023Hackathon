@@ -4,6 +4,8 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.U2D;
 
+public enum StatType { Hp, Atk, Spd, }
+
 public static class Global {
     #nullable enable
     public static T FindComponent<T>(GameObject obj) {
