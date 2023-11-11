@@ -433,7 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 33078681}
   chunkSize: 20
-  renderDistance: 2
+  renderDistance: 1
   validChunks:
   - {fileID: 1159413878907473297, guid: 8ea309d5fccfc684e88523b43350f42b, type: 3}
   spawnedChunks: []
