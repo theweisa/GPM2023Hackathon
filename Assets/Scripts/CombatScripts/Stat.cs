@@ -15,4 +15,8 @@ public class Stat {
     public void Init() {
         baseValue = value;
     }
+
+    public void SetValue(float newValue) {
+        value = newValue;
+    }
 }

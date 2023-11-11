@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class BaseProjectile : BaseDamageSource
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public float projectileSpeed;
+    public void InitProjectile(BaseDamageable host, Vector2 direction) {
+        this.host = host;
+        rb.AddForce(projectileSpeed*direction, ForceMode2D.Impulse);
     }
 }
