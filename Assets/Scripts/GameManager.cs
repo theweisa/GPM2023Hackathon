@@ -7,8 +7,8 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class GameManager : UnitySingleton<GameManager>
 {
-    float waveTimer;
-    float spawnTimer;
+    [SerializeField] float waveTimer;
+    [SerializeField] float spawnTimer;
     [SerializeField] float spawnRadius;
 
     [SerializeField] GameObject myPrefab;
@@ -16,8 +16,8 @@ public class GameManager : UnitySingleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-        waveTimer = 1f;
-        spawnTimer = 1f;
+        //waveTimer = 60f;
+        //spawnTimer = 1f;
     }
 
     // Update is called once per frame
@@ -25,12 +25,15 @@ public class GameManager : UnitySingleton<GameManager>
     {
         //every minute, create a wave
         waveTimer -= Time.deltaTime;
-        spawnTimer -= Time.deltaTime;
+        
         
         //every wave has a spawn rate and an enemy quotient::: Level 1 spawns 50 enemies at 4 enemies per second
         if(waveTimer <= 0f)
         {
             print("next wave");
+
+            spawnTimer -= Time.deltaTime;
+            
             //every spawn rate interval, spawn an enemy until we hit the quotient
             if(spawnTimer <= 0f)
             {
@@ -40,9 +43,9 @@ public class GameManager : UnitySingleton<GameManager>
                 Instantiate(myPrefab, new Vector3(newPos.x, newPos.y, 1), Quaternion.identity);
                 spawnTimer = 1f;
             }
+            waveTimer = 60f;
         }
     }
-        
 
     Vector2 randomCirclePos(Vector2 pos, float radius)
     {

@@ -384,6 +384,18 @@ PrefabInstance:
       propertyPath: myPrefab
       value: 
       objectReference: {fileID: 1393273651288643045, guid: adacf3b37323e45ec8b1e94e3688925c, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: waveTimer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: spawnTimer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: spawnRadius
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4950192282763583345, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
