@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyCombatant : BaseCombatant
 {
-    public float moveSpeed = 10;
     Vector2 moveDirection;
     
     // Update is called once per frame
@@ -19,6 +18,6 @@ public class EnemyCombatant : BaseCombatant
 
     void MoveCombatant() {
         GetMoveDirection();
-        rb.velocity = moveSpeed * moveDirection;
+        rb.velocity = GetStatValue(StatType.Spd) * moveDirection;
     }
 }

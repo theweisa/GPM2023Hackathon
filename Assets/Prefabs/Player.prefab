@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 9129551976589705045}
   - component: {fileID: 4472327011349739947}
   - component: {fileID: 4990824905015203236}
+  - component: {fileID: 8808922360094396630}
   - component: {fileID: 5088666027354113107}
   - component: {fileID: 3412681458278518862}
   m_Layer: 0
@@ -127,7 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d42d30454d5c44c99ef6713680cc738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 4990824905015203236}
+  combatant: {fileID: 8808922360094396630}
 --- !u!114 &4990824905015203236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,8 +142,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee26770f29a00415085ad2504f8de649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 5088666027354113107}
+  combatant: {fileID: 8808922360094396630}
   moveDirection: {x: 0, y: 0}
+--- !u!114 &8808922360094396630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922194070680463736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6895edb43902f427db0500a8700822f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats:
+  - type: 0
+    value: 0
+    baseValue: 0
+  - type: 2
+    value: 10
+    baseValue: 0
+  rb: {fileID: 5088666027354113107}
 --- !u!50 &5088666027354113107
 Rigidbody2D:
   serializedVersion: 4
