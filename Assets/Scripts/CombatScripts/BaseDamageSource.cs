@@ -95,7 +95,7 @@ public class BaseDamageSource : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D coll) {
         BaseDamageable damageable = Global.FindComponent<BaseDamageable>(coll.gameObject);
-        if (damageable && !ReferenceEquals(host.gameObject, damageable.gameObject)) {
+        if (damageable && host && !ReferenceEquals(host.gameObject, damageable.gameObject)) {
             contactedDamageables.Add(damageable);
         }
     }
