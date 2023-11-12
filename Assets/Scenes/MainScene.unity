@@ -670,7 +670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: EventQueue.Array.size
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: EventQueue.Array.data[0].SpawnRate
@@ -701,6 +701,22 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[6].SpawnQuota
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[7].SpawnQuota
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[8].SpawnQuota
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[9].SpawnQuota
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: EventQueue.Array.data[0].SpawnRate_SecPerEnemy
       value: 1
       objectReference: {fileID: 0}
@@ -722,7 +738,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: EventQueue.Array.data[5].SpawnRate_SecPerEnemy
-      value: 1
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[6].SpawnRate_SecPerEnemy
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[7].SpawnRate_SecPerEnemy
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[8].SpawnRate_SecPerEnemy
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[9].SpawnRate_SecPerEnemy
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: EventQueue.Array.data[0].SelectedEnemies.Array.size
@@ -746,7 +778,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: EventQueue.Array.data[5].SelectedEnemies.Array.size
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[6].SelectedEnemies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[7].SelectedEnemies.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[8].SelectedEnemies.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[9].SelectedEnemies.Array.size
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: EventQueue.Array.data[0].SelectedEnemies.Array.data[0]
@@ -795,7 +843,91 @@ PrefabInstance:
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: EventQueue.Array.data[5].SelectedEnemies.Array.data[2]
       value: 
+      objectReference: {fileID: 8656368173954854636, guid: d69f8b5f53c51dd488b6adc51c998f46, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[6].SelectedEnemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 8656368173954854636, guid: d69f8b5f53c51dd488b6adc51c998f46, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[6].SelectedEnemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 662369609828757463, guid: 362af21c7ca3c7d439a257d6db27f62a, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[6].SelectedEnemies.Array.data[2]
+      value: 
+      objectReference: {fileID: 7147612290303634585, guid: 548f7a5596626ab4bb9dc2be7e9ecde9, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[7].SelectedEnemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 4284253647267103235, guid: 225716830c4f2964890f571852f25112, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[7].SelectedEnemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 7147612290303634585, guid: 548f7a5596626ab4bb9dc2be7e9ecde9, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[7].SelectedEnemies.Array.data[2]
+      value: 
       objectReference: {fileID: 2271966880022365126, guid: c3f6830684cf1f64b8f6689225669f17, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[7].SelectedEnemies.Array.data[3]
+      value: 
+      objectReference: {fileID: 5977232009285563623, guid: 87ee0b6fa3ac5374f9b94fc6ba5322f0, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[7].SelectedEnemies.Array.data[4]
+      value: 
+      objectReference: {fileID: 662369609828757463, guid: 362af21c7ca3c7d439a257d6db27f62a, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[7].SelectedEnemies.Array.data[5]
+      value: 
+      objectReference: {fileID: 8656368173954854636, guid: d69f8b5f53c51dd488b6adc51c998f46, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[8].SelectedEnemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 4284253647267103235, guid: 225716830c4f2964890f571852f25112, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[8].SelectedEnemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 7147612290303634585, guid: 548f7a5596626ab4bb9dc2be7e9ecde9, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[8].SelectedEnemies.Array.data[2]
+      value: 
+      objectReference: {fileID: 2271966880022365126, guid: c3f6830684cf1f64b8f6689225669f17, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[8].SelectedEnemies.Array.data[3]
+      value: 
+      objectReference: {fileID: 5977232009285563623, guid: 87ee0b6fa3ac5374f9b94fc6ba5322f0, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[8].SelectedEnemies.Array.data[4]
+      value: 
+      objectReference: {fileID: 662369609828757463, guid: 362af21c7ca3c7d439a257d6db27f62a, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[8].SelectedEnemies.Array.data[5]
+      value: 
+      objectReference: {fileID: 8656368173954854636, guid: d69f8b5f53c51dd488b6adc51c998f46, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[9].SelectedEnemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 4284253647267103235, guid: 225716830c4f2964890f571852f25112, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[9].SelectedEnemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 7147612290303634585, guid: 548f7a5596626ab4bb9dc2be7e9ecde9, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[9].SelectedEnemies.Array.data[2]
+      value: 
+      objectReference: {fileID: 2271966880022365126, guid: c3f6830684cf1f64b8f6689225669f17, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[9].SelectedEnemies.Array.data[3]
+      value: 
+      objectReference: {fileID: 5977232009285563623, guid: 87ee0b6fa3ac5374f9b94fc6ba5322f0, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[9].SelectedEnemies.Array.data[4]
+      value: 
+      objectReference: {fileID: 662369609828757463, guid: 362af21c7ca3c7d439a257d6db27f62a, type: 3}
+    - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
+      propertyPath: EventQueue.Array.data[9].SelectedEnemies.Array.data[5]
+      value: 
+      objectReference: {fileID: 8656368173954854636, guid: d69f8b5f53c51dd488b6adc51c998f46, type: 3}
     - target: {fileID: 4950192282763583345, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
