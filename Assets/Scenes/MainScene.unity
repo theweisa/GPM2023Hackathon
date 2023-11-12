@@ -1746,7 +1746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: EventQueue.Array.data[0].SpawnRate_SecPerEnemy
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: EventQueue.Array.data[1].SpawnRate_SecPerEnemy
