@@ -10,13 +10,21 @@ public class BaseDamageable : MonoBehaviour
     };
     public Rigidbody2D rb;
     // Start is called before the first frame update
+    protected virtual void Start() {
+
+    }
     virtual protected void Awake() {
         rb = rb ? rb : Global.FindComponent<Rigidbody2D>(gameObject);
         InitStats();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
+    {
+        
+    }
+
+    protected virtual void FixedUpdate()
     {
         
     }
@@ -26,15 +34,11 @@ public class BaseDamageable : MonoBehaviour
         //if (damageTaken <= 0) return;
         Stat hp = GetStat(StatType.Hp);
         hp.SetValue(hp.value-damageTaken);
-        KnockBack(source);
+        source.Knockback(this);
         Debug.Log($"{gameObject.name} hp: {hp.value} after {damageTaken} damage taken");
         if (hp.value <= 0) {
             StartCoroutine(OnDeath());
         }
-    }
-
-    virtual public void KnockBack(BaseDamageSource source) {
-        
     }
 
     virtual public IEnumerator OnDeath() {

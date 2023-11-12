@@ -10,9 +10,9 @@ public class TreePulseDamageSource : BaseDamageSource
     [HideIf("useCurrentScaleAsFinalScale")] public float endScale;
     // expands until its lifespan ends
     // Start is called before the first frame update
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
         Vector3 eScale = useCurrentScaleAsFinalScale ? transform.localScale : new Vector3(endScale, endScale, endScale);
         transform.localScale = Vector3.zero;
         LeanTween.scale(gameObject, eScale, lifetime).setEaseOutExpo();

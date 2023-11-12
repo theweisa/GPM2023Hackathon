@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7475701926491242155
+--- !u!1001 &7159923157120026163
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,40 +9,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 867255158214447278, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
+      propertyPath: m_LinearDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 867255158214447278, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3072528493608390672, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Name
-      value: TreePulseDamageSource
+      value: PlayerSecondary
       objectReference: {fileID: 0}
-    - target: {fileID: 3072528493608390672, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
-      propertyPath: m_Layer
-      value: 3
+    - target: {fileID: 3326572672109225032, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Size.x
+      value: 1.54
       objectReference: {fileID: 0}
-    - target: {fileID: 3072528493608390672, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
+    - target: {fileID: 3326572672109225032, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Size.y
+      value: 2.47
       objectReference: {fileID: 0}
     - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970235359860201050, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7203213740273869412, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_LocalScale.x
-      value: 8
+      value: 1.65
       objectReference: {fileID: 0}
-    - target: {fileID: 7203213740273869412, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+    - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_LocalScale.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7203213740273869412, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 8
+      value: 2.47
       objectReference: {fileID: 0}
     - target: {fileID: 7203213740273869412, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_LocalPosition.x
@@ -84,13 +76,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7203213740273869412, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8218084805748586443, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Color.a
-      value: 0.09411765
+      value: 0.22745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 8218084805748586443, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5283019
+      objectReference: {fileID: 0}
+    - target: {fileID: 8218084805748586443, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5283019
+      objectReference: {fileID: 0}
+    - target: {fileID: 8218084805748586443, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5283019
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 892757248866016366, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
@@ -99,38 +99,38 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3072528493608390672, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5757766925900354921}
+      addedObject: {fileID: -1183235894650975413}
   m_SourcePrefab: {fileID: 100100000, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
---- !u!1 &5556552613526105787 stripped
+--- !u!1 &5331972030813230627 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3072528493608390672, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
-  m_PrefabInstance: {fileID: 7475701926491242155}
+  m_PrefabInstance: {fileID: 7159923157120026163}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5757766925900354921
+--- !u!114 &-1183235894650975413
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5556552613526105787}
+  m_GameObject: {fileID: 5331972030813230627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4486b7e260fd3594c81d748e1bdb8828, type: 3}
+  m_Script: {fileID: 11500000, guid: f43e4d4296bc24f4f97ef065c642ba21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   host: {fileID: 0}
   contactedDamageables: []
   hitDamageables: []
-  damageScaling: 1
-  knockback: 5
+  damageScaling: 0.1
+  knockback: 70
   hasLifetime: 1
-  lifetime: 1.5
+  lifetime: 1
   baseDamageScaling: 0
   damage: 0
   active: 1
   damageOverTime: 0
   destroyOnContact: 0
   hitRate: 0
-  useCurrentScaleAsFinalScale: 1
-  endScale: 5
+  projectileSpeed: 20
+  meterCost: 33

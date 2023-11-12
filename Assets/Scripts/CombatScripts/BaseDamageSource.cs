@@ -11,6 +11,7 @@ public class BaseDamageSource : MonoBehaviour
     [HideInInspector] public List<BaseDamageable> contactedDamageables = new List<BaseDamageable>();
     [HideInInspector] public List<BaseDamageable> hitDamageables = new List<BaseDamageable>();
     public float damageScaling = 1f;
+    public float knockback = 0f;
     public bool hasLifetime = true;
     [ShowIf("hasLifetime")] public float lifetime;
     [HideInInspector] public float baseDamageScaling;
@@ -19,10 +20,11 @@ public class BaseDamageSource : MonoBehaviour
     public bool damageOverTime = false;
     [HideIf("damageOverTime")] public bool destroyOnContact = false;
     [ShowIf("damageOverTime")] public float hitRate;
+    
     float hitTimer;
 
     // Start is called before the first frame update
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         rb = rb ? rb : Global.FindComponent<Rigidbody2D>(gameObject);
         baseDamageScaling = damageScaling;
@@ -77,6 +79,11 @@ public class BaseDamageSource : MonoBehaviour
         else if (damageOverTime){
             active = false;
         }
+    }
+
+    public virtual void Knockback(BaseDamageable damageable) {
+        Vector2 dir = (damageable.transform.position - transform.position).normalized;
+        damageable.rb.AddForce(dir * knockback, ForceMode2D.Impulse);
     }
 
     public virtual IEnumerator OnDeath() {

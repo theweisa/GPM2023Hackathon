@@ -114,6 +114,7 @@ MonoBehaviour:
   contactedDamageables: []
   hitDamageables: []
   damageScaling: 1
+  knockback: 1
   hasLifetime: 1
   lifetime: 0
   baseDamageScaling: 0
@@ -133,7 +134,7 @@ GameObject:
   - component: {fileID: 3335054199853082920}
   - component: {fileID: 8218084805748586443}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
