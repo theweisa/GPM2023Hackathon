@@ -34,6 +34,12 @@ public class PlayerCombatant : BaseCombatant
         }
     }
 
+    public override Stat ApplyDamage(float damageTaken) {
+        Stat hp = base.ApplyDamage(damageTaken);
+        // call damage sound here
+        return hp;
+    }
+
     public override void InitDamageText(float dmg)
     {
         DamageText dmgTxt = Instantiate(ResourceManager.Instance.GetTextByName("DamageText"), transform.position, Quaternion.identity, InstantiationManager.Instance.otherParent).GetComponent<DamageText>();
@@ -47,7 +53,7 @@ public class PlayerCombatant : BaseCombatant
     }
 
     public void AddEnergy(float newEnergy) {
-        energy += newEnergy;
+        energy += newEnergy * GetStatValue(StatType.EnergyMult);
         UIManager.Instance.energyBar.UpdateUI(energy, energyThreshold);
         if (energy >= energyThreshold) {
             PlantTree();

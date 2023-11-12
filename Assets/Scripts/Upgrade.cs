@@ -20,6 +20,7 @@ public class Upgrade : ScriptableObject, IStatMod
     public Sprite image;
     public string id;
     public string description;
+    public string levelUpDescription;
     public int level = 1;
     public int maxLevel = 5;
     public int spawnWeighting = 10;
