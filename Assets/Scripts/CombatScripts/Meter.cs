@@ -4,15 +4,46 @@ using UnityEngine;
 
 public class Meter : MonoBehaviour
 {
+    public Transform fill;
+    public Transform trail;
+
+    public float maxMeter = 100f;
+    public float currentMeter;
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-        
+        currentMeter = maxMeter;
+        fill.localScale = new Vector3(currentMeter/maxMeter, fill.localScale.y, fill.localScale.z);
+        trail.localScale = fill.localScale;
+    }
+    // Update is called once per frame
+    protected virtual void Update()
+    {
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public virtual void AddMeter(float amt, LeanTweenType ease=LeanTweenType.easeOutExpo) {
+        currentMeter = Mathf.Clamp(currentMeter+amt, 0f, maxMeter);
+        StartCoroutine(UpdateMeter(ease));
+    }
+    public virtual void DepleteMeter(float amt, LeanTweenType ease=LeanTweenType.easeOutExpo) {
+        AddMeter(-amt, ease);
+    }
+    protected virtual IEnumerator UpdateMeter(LeanTweenType ease=LeanTweenType.easeOutExpo) {
+        trail.localScale = fill.localScale;
+        if (ease != LeanTweenType.notUsed) {
+            LeanTween.scaleX(fill.gameObject, currentMeter/maxMeter, 0.3f).setEase(ease);
+            yield return new WaitForSeconds(0.5f);
+            LeanTween.scaleX(trail.gameObject, fill.localScale.x, 0.3f).setEase(ease);
+        }
+        else {
+            SetScaleX(fill, currentMeter/maxMeter);
+            yield return new WaitForSeconds(0.5f);
+            SetScaleX(trail, fill.localScale.x);
+        }
+    }
+
+    public void SetScaleX(Transform t, float x) {
+        t.localScale = new Vector3(x, t.localScale.y, t.localScale.z);
     }
 }
