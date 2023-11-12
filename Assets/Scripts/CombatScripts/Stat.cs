@@ -34,7 +34,9 @@ public class Stat {
     public float CalculateStat() {
         // this fucking shit piece of code was the damn issue
         if (this.type == StatType.Hp) {
+            float prevRatio = value/baseValue;
             this.baseValue = CalculateValue(this);
+            value = baseValue * prevRatio;
             return this.baseValue;
         }
         this.value = CalculateValue(this);

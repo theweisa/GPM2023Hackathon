@@ -11,7 +11,7 @@ public class Upgrade : ScriptableObject, IStatMod
     [System.Serializable] public class UpgradeStatMod {
         public string id;
         public StatModifier statMod;
-        public int statLevelUp;
+        public float statLevelUp;
         public UpgradeStatMod(string id) {
             this.id = id;
         }
