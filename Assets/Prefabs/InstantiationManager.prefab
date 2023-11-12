@@ -82,7 +82,7 @@ MonoBehaviour:
   treeParent: {fileID: 6959711252127491657}
   enemyParent: {fileID: 5427818124102297502}
   damageSourceParent: {fileID: 7352002783690859357}
-  otherParent: {fileID: 0}
+  otherParent: {fileID: 870767576584832491}
 --- !u!1 &3668688914845888754
 GameObject:
   m_ObjectHideFlags: 0

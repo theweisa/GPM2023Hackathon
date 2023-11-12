@@ -14,17 +14,18 @@ public class PlayerCombatant : BaseCombatant
     public float exp = 0f;
     public float expThreshold;
     // Start is called before the first frame update
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
         meter = meter ? meter : Global.FindComponent<AttackMeter>(gameObject);
         controller = controller ? controller : Global.FindComponent<PlayerController>(gameObject);
+        LevelUp();
     }
 
     // Update is called once per frame
     protected override void Update()
     {
-        
+        base.Update();
     }
 
     public override IEnumerator OnDeath()
@@ -64,5 +65,6 @@ public class PlayerCombatant : BaseCombatant
     void LevelUp() {
         level++;
         Debug.Log("level up!");
+        UIManager.Instance.ShowUpgradesScreen();
     }
 }

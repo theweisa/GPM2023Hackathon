@@ -10,6 +10,7 @@ public class BaseDamageSource : MonoBehaviour
     [HideInInspector] public BaseDamageable host;
     [HideInInspector] public List<BaseDamageable> contactedDamageables = new List<BaseDamageable>();
     [HideInInspector] public List<BaseDamageable> hitDamageables = new List<BaseDamageable>();
+    [HideInInspector] public List<Upgrade> upgrades = new List<Upgrade>();
     public float damageScaling = 1f;
     public float knockback = 0f;
     public bool hasLifetime = true;
@@ -39,6 +40,7 @@ public class BaseDamageSource : MonoBehaviour
     protected virtual void Update()
     {
         UpdateTimers();
+        UpdateUpgrades();
         CheckContactedDamageables();
     }
 
@@ -69,9 +71,11 @@ public class BaseDamageSource : MonoBehaviour
     public virtual void Init(BaseDamageable host) {
         this.host = host;
         damage = damageScaling * host.GetStatValue(StatType.Atk);
+        ApplyUpgrades(host.upgrades);
     }
 
     public virtual void OnHit(BaseDamageable damageable) {
+        Debug.Log($"{gameObject.name} hits {damageable.gameObject.name}");
         damageable.Damage(this);
         hitDamageables.Add(damageable);
         if (destroyOnContact) {
@@ -94,16 +98,33 @@ public class BaseDamageSource : MonoBehaviour
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D coll) {
-        BaseDamageable damageable = Global.FindComponent<BaseDamageable>(coll.gameObject);
+        BaseDamageable damageable = coll.GetComponent<BaseDamageable>();
         if (damageable && host && !ReferenceEquals(host.gameObject, damageable.gameObject)) {
             contactedDamageables.Add(damageable);
         }
     }
 
     protected virtual void OnTriggerExit2D(Collider2D coll) {
-        BaseDamageable damageable = Global.FindComponent<BaseDamageable>(coll.gameObject);
+        BaseDamageable damageable = coll.GetComponent<BaseDamageable>();
         if (damageable) {
             contactedDamageables.Remove(damageable);
         }
     }
+
+    #region upgrade shit
+    public virtual void ApplyUpgrades(List<Upgrade> newUpgrades) {
+        foreach (Upgrade u in newUpgrades) {
+            Upgrade clone = u.Clone();
+            clone.SetHostDamageSource(this);
+            upgrades.Add(clone);
+            clone.OnDamageSource(this);
+        }
+    }
+
+    public virtual void UpdateUpgrades() {
+        foreach (Upgrade u in upgrades) {
+            u.OnDamageSourceUpdate(this);
+        }
+    }
+    #endregion
 }

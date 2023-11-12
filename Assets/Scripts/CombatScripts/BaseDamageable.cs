@@ -9,6 +9,7 @@ public class BaseDamageable : MonoBehaviour
     public List<Stat> stats = new List<Stat>() {
         new Stat(StatType.Hp), new Stat(StatType.Atk), new Stat(StatType.Spd)
     };
+    public List<Upgrade> upgrades = new List<Upgrade>();
     [Header("References")]
     [Space(4)]
     public Meter healthBar;
@@ -18,9 +19,6 @@ public class BaseDamageable : MonoBehaviour
     public Collider2D coll;
     [HideInInspector] public bool active = true;
     // Start is called before the first frame update
-    protected virtual void Start() {
-
-    }
     virtual protected void Awake() {
         rb = rb ? rb : Global.FindComponent<Rigidbody2D>(gameObject);
         healthBar = healthBar ? healthBar : Global.FindComponent<Meter>(gameObject);
@@ -38,7 +36,8 @@ public class BaseDamageable : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        
+        UpdateStats();
+        UpdateUpgrades();
     }
 
     protected virtual void FixedUpdate()
@@ -89,14 +88,37 @@ public class BaseDamageable : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    public bool IsPlayer() {
+        return gameObject.CompareTag("Player");
+    }
 
+    public void AddUpgrade(Upgrade newUpgrade) {
+        foreach (Upgrade upgrade in upgrades) {
+            if (newUpgrade.id == upgrade.id) {
+                newUpgrade.LevelUp();
+                upgrade.LevelUp();
+                return;
+            }
+        }
+        Upgrade clone = newUpgrade.Clone();
+        clone.SetHostDamageable(this);
+        clone.OnApply();
+        upgrades.Add(clone);
+    }
+
+    public void UpdateUpgrades() {
+        foreach (Upgrade upgrade in upgrades) {
+            upgrade.OnDamageableUpdate(this);
+        }
+    }
+
+    #region stats
     virtual protected void InitStats() {
         foreach (Stat s in stats) {
             s.Init();
         }
     }
-
-    #region stats
 
     public Stat GetStat(StatType sType) {
         return stats.FirstOrDefault(s => s.type == sType);
@@ -114,8 +136,157 @@ public class BaseDamageable : MonoBehaviour
         return -1f;
     }
 
-    public bool IsPlayer() {
-        return gameObject.CompareTag("Player");
+    public bool AddModifier(StatModifier mod) {
+        foreach (Stat stat in stats) {
+            if (stat.type == mod.modStat) {
+                stat.AddModifier(mod);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public bool RemoveModifierFromSource(IStatMod source) {
+        bool retval = false;
+        foreach (Stat stat in stats) {
+
+            if (stat.RemoveModifierFromSource(source)) retval = true;
+        }
+        return retval;
+    }
+
+    public bool RemoveModifierFromReference(StatModifier mod) {
+        bool retval = false;
+        foreach (Stat stat in stats) {
+            if (stat.type == mod.modStat) {
+                if (stat.RemoveModifierFromReference(mod)) retval = true;
+            }
+        }
+        return retval;
+    }
+
+    public void RemoveAllModifiers()
+    {
+        foreach(Stat stat in stats)
+        {
+            stat.modifiers.Clear();
+        }
+    }
+
+    public Stat GetStatObject(StatType type)
+    {
+        foreach (Stat stat in stats)
+        {
+            if (stat.type == type)
+            {
+                return stat;
+            }
+        }
+        return null;
+    }
+
+    public float GetBaseStat(StatType type)
+    {
+        foreach (Stat stat in stats)
+        {
+            if (stat.type == type)
+            {
+                return stat.baseValue;
+            }
+        }
+        return 0;
+    }
+
+    public Stat SetBaseStat(StatType type, float amount) {
+        foreach (Stat stat in stats)
+        {
+            if (stat.type == type)
+            {
+                stat.baseValue = amount;
+                return stat;
+            }
+        }
+        return null;
+    }
+
+    public Stat SetStat(StatType type, float amount) {
+        foreach (Stat stat in stats)
+        {
+            if (stat.type == type)
+            {
+                stat.value = amount;
+                return stat;
+            }
+        }
+        return null;
+    }
+
+    public Stat CopyStat(Stat cStat) {
+        for (int i = 0; i < stats.Count; i++) {
+            if (stats[i].type == cStat.type) {
+                stats[i] = cStat;
+                return stats[i];
+            }
+        }
+        return null;
+    }
+
+    public bool AddStat(StatType newStat, float value=0) {
+        foreach (Stat stat in stats) {
+            if (stat.type == newStat) {
+                return false;
+            }
+        }
+        stats.Add(new Stat(newStat, value));
+        return true;
+    }
+
+    public bool AddStat(Stat newStat) {
+        foreach (Stat stat in stats) {
+            if (stat.type == newStat.type) {
+                return false;
+            }
+        }
+        stats.Add(newStat);
+        return true;
+    }
+
+    public void SetToBaseStats() {
+        foreach (Stat stat in stats) {
+            stat.value = stat.baseValue;
+        }
+    }
+
+    public void PrintStats()
+    {
+        foreach(Stat stat in stats)
+        {
+            string type = stat.type.ToString();
+            Debug.Log($"{type}: {stat.value}/{stat.baseValue}");
+        }
+    }
+
+    public void UpdateStats() {
+        foreach (Stat stat in stats) {
+            stat.Update();
+        }
+    }
+
+    public void CalculateStats() {
+        foreach (Stat stat in stats) {
+            stat.CalculateStat();
+            if (stat.type == StatType.Hp) {
+                healthBar.SetMeter(stat.value, stat.baseValue);
+            }
+        }
+    }
+
+    public bool ContainsModifier(StatModifier mod) {
+        foreach (Stat stat in stats) {
+            if (stat.type != mod.modStat) continue;
+            return stat.ContainsModifier(mod);
+        }
+        return false;
     }
 
     #endregion
