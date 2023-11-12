@@ -5,13 +5,23 @@ using UnityEditor;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
+[System.Serializable]
+public class WaveEvent
+{
+    [SerializeField] public float SpawnRate_SecPerEnemy;
+    [SerializeField] public float SpawnQuota; 
+    [SerializeField] public EnemyCombatant[] SelectedEnemies; 
+}
+
 public class GameManager : UnitySingleton<GameManager>
 {
-    public float totalTimer = 300f;
-    [SerializeField] float waveInterval; //user sets the values of how long it takes to trigger the wave & spawn rate
-    [SerializeField] float spawnInterval;
+    [SerializeField] public WaveEvent[] EventQueue; //the queue of events that the game manager will cycle through 
+    public WaveEvent curEvent;
+    public int curEventNum;
 
-    [SerializeField] int spawnCount; //user sets how many enemies should get spawned during a wave
+    public float totalTimer = 300f;
+    [SerializeField] float waveInterval; //user sets the length of time between each wave
+
     [SerializeField] int curSpawnNum;
 
     [SerializeField] float waveTimer; //public variables so you can see if the timer is working correctly
@@ -30,6 +40,8 @@ public class GameManager : UnitySingleton<GameManager>
         waveTimer = 0;
         spawnTimer = 0;
         curSpawnNum = 0;
+        curEvent = EventQueue[0];
+        curEventNum = 0;
     }
 
     // Update is called once per frame
@@ -48,27 +60,51 @@ public class GameManager : UnitySingleton<GameManager>
             {
                 print("NEW ENEMY");
                 //spawn enemy at random location on a circle defined by user-given radius
-                Vector2 newPos = randomCirclePos(new Vector2(0,0), spawnRadius);
-                GameObject enemy = ResourceManager.Instance.GetEnemyByName("ChaserEnemy");
+                Vector2 newPos = randomCirclePos(PlayerManager.Instance.transform.position, spawnRadius);
+
+                //GameObject enemy = ResourceManager.Instance.GetEnemyByName("ChaserEnemy");
+                GameObject enemy = selectEnemy();
                 if (!enemy) return;
                 Instantiate(enemy, newPos, Quaternion.identity, InstantiationManager.Instance.enemyParent);
-                spawnTimer = spawnInterval;
-
                 curSpawnNum += 1;
+                
                 //reset spawn timer
-                spawnTimer = spawnInterval;
+                spawnTimer = curEvent.SpawnRate_SecPerEnemy;
             }
-            //check if we've hit our quotient
-            if(curSpawnNum == spawnCount)
-            {
-                curSpawnNum = 0;
-                waveTimer = waveInterval; //reset the wave timer
-                print("NEXT WAVE");
-            }
-            else
+            //if we haven't hit the quota, keep spawning
+            if(curSpawnNum != curEvent.SpawnQuota)
             {
                 spawnTimer -= Time.deltaTime;
             }
+            else //we finished the wave, so we move on to the next
+            {
+                curSpawnNum = 0;
+                waveTimer = waveInterval; //reset the wave timer
+                nextWave();
+                print("NEXT WAVE"); 
+            }
+        }
+    }
+
+    GameObject selectEnemy() //select Enemy from list of possible enemies from CurEvent
+    {
+        int num = Random.Range(0, curEvent.SelectedEnemies.Length);
+        string name = curEvent.SelectedEnemies[num].name;
+        print("Name of enemy spawned: " + name);
+        return ResourceManager.Instance.GetEnemyByName(name);
+        
+    }
+
+    void nextWave()//move to next WaveEvent in the queue
+    {
+        //if there's another event, move on
+        if((curEventNum + 1) <= EventQueue.Length)
+        {
+            curEventNum += 1;
+            curEvent = EventQueue[curEventNum];
+        }else{ //if you reach the end, then restart at the beginning ---------- Probably want to change this eventually to insert safety default events or something
+            curEventNum = 0;
+            curEvent = EventQueue[curEventNum]; 
         }
     }
 
