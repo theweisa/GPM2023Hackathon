@@ -35,4 +35,10 @@ public class TreePulseDamageSource : BaseDamageSource
             active = false;
         }
     }
+    public override IEnumerator OnDeath()
+    {
+        Global.Fade(Global.FindComponent<SpriteRenderer>(gameObject), 0.3f);
+        yield return new WaitForSeconds(0.3f);
+        Destroy(gameObject);
+    }
 }

@@ -157,7 +157,7 @@ MonoBehaviour:
   damageScaling: 1
   knockback: 5
   hasLifetime: 1
-  lifetime: 1.5
+  lifetime: 1
   baseDamageScaling: 0
   damage: 0
   active: 1
