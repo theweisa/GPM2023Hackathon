@@ -7,6 +7,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class GameManager : UnitySingleton<GameManager>
 {
+    public float totalTimer = 300f;
     [SerializeField] float waveInterval; //user sets the values of how long it takes to trigger the wave & spawn rate
     [SerializeField] float spawnInterval;
 
@@ -29,6 +30,7 @@ public class GameManager : UnitySingleton<GameManager>
     // Update is called once per frame
     void Update()
     {
+        UpdateTimer();
         //every minute, create a wave
         waveTimer -= Time.deltaTime;
                
@@ -61,6 +63,13 @@ public class GameManager : UnitySingleton<GameManager>
             {
                 spawnTimer -= Time.deltaTime;
             }
+        }
+    }
+
+    void UpdateTimer() {
+        totalTimer -= Time.deltaTime;
+        if (totalTimer <= 0) {
+            Debug.Log("You Win!");
         }
     }
 

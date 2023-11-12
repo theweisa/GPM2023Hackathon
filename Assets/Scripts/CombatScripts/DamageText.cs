@@ -6,7 +6,7 @@ using System;
 
 public class DamageText : MonoBehaviour
 {
-    public enum TextType { Damage, Heal };
+    public enum TextType { Damage, Heal, Player };
     public float angle = 20f;
     public float angleOffset = 5f;
     public float textDist = 0.7f;
@@ -25,6 +25,9 @@ public class DamageText : MonoBehaviour
             case TextType.Heal:
                 text.color = Color.green;
                 text.fontSize *= 1.4f;
+                break;
+            case TextType.Player:
+                text.color = Color.red;
                 break;
             default:
                 break;

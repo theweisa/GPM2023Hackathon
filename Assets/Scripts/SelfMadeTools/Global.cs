@@ -4,7 +4,12 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.U2D;
 
-public enum StatType { Hp, Atk, Spd, DmgReduction, ExpMult, EnergyMult }
+// oh boy time to load a million fucking stats
+public enum StatType { 
+    Hp, Atk, Spd, DmgReduction, EnergyMult, 
+    TreeHeal, AttackMeterMult, ExpChance, ProjSize, TreeHpMult, TreeAtkUp,
+    KnockbackUp, TreeFireRateMult, TreeProjSize, RegenSpeed
+}
 
 public static class Global {
     #nullable enable

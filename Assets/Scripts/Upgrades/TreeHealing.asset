@@ -10,13 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fd045c5bfa65944083be8e90a5a2720, type: 3}
-  m_Name: test1 3
+  m_Name: TreeHealing
   m_EditorClassIdentifier: 
-  id: t4
-  description: hi
-  level: 0
-  spawnWeighting: 5
+  statMods:
+  - id: onApply
+    statMod:
+      modValue: 3
+      baseModValue: 0
+      modStat: 5
+      modifierCalc: 1
+      modifierType: 0
+      modDuration: 0
+      baseModTimer: 0
+    statLevelUp: 3
+  image: {fileID: 0}
+  id: Nature's Bounty
+  description: Increase Tree healing by 30%
+  level: 1
+  maxLevel: 5
+  spawnWeighting: 10
   hasCooldown: 0
   cooldown: 0
+  cooldownTimer: 0
   hostDamageSource: {fileID: 0}
   hostDamageable: {fileID: 0}

@@ -10,6 +10,7 @@ public class PlayerCombatant : BaseCombatant
     public int level = 1;
     public float energy;
     public float energyThreshold;
+    public float levelExpMultiplier = 1.2f;
 
     public float exp = 0f;
     public float expThreshold;
@@ -19,13 +20,24 @@ public class PlayerCombatant : BaseCombatant
         base.Awake();
         meter = meter ? meter : Global.FindComponent<AttackMeter>(gameObject);
         controller = controller ? controller : Global.FindComponent<PlayerController>(gameObject);
-        LevelUp();
     }
 
     // Update is called once per frame
     protected override void Update()
     {
         base.Update();
+        if (Input.GetKeyDown(KeyCode.L)) {
+            LevelUp();
+        }
+        if (Input.GetKeyDown(KeyCode.E)) {
+            PlantTree();
+        }
+    }
+
+    public override void InitDamageText(float dmg)
+    {
+        DamageText dmgTxt = Instantiate(ResourceManager.Instance.GetTextByName("DamageText"), transform.position, Quaternion.identity, InstantiationManager.Instance.otherParent).GetComponent<DamageText>();
+        dmgTxt.Init(dmg, DamageText.TextType.Player);
     }
 
     public override IEnumerator OnDeath()
@@ -64,6 +76,7 @@ public class PlayerCombatant : BaseCombatant
 
     void LevelUp() {
         level++;
+        expThreshold *= levelExpMultiplier;
         Debug.Log("level up!");
         UIManager.Instance.ShowUpgradesScreen();
     }

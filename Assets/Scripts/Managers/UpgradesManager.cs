@@ -41,10 +41,10 @@ public class UpgradesManager : UnitySingleton<UpgradesManager>
                 if (randomWeight <= currentWeight) {
                     Upgrade playerUpgrade = PlayerManager.Instance.combatant.ContainsUpgrade(upgrade);
                     if (playerUpgrade) {
-                        uBtn.Init(playerUpgrade);
+                        uBtn.Init(playerUpgrade, true);
                     }
                     else {
-                        uBtn.Init(upgrade, true);
+                        uBtn.Init(upgrade);
                     }
                     tmpUpgrades.RemoveAt(i);
                     totalWeight -= upgrade.spawnWeighting;

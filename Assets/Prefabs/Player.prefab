@@ -366,6 +366,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5807582238916729657, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.954
+      objectReference: {fileID: 0}
     - target: {fileID: 6481034795117548475, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -486,6 +490,7 @@ MonoBehaviour:
   level: 1
   energy: 0
   energyThreshold: 100
+  levelExpMultiplier: 1.2
   exp: 0
   expThreshold: 100
 --- !u!114 &2981163769615601489
