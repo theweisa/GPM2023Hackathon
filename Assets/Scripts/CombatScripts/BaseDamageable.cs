@@ -32,6 +32,9 @@ public class BaseDamageable : MonoBehaviour
             healthBar.currentMeter = healthBar.maxMeter;
         }
     }
+    virtual protected void Start() {
+        
+    }
 
     // Update is called once per frame
     protected virtual void Update()

@@ -13,16 +13,24 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 564595109174636083, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 564595109174636083, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_Size.y
+      value: 2.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 564595109174636083, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 308444187, guid: 46434d7ee20f3e24a8c9e0989da09974, type: 3}
     - target: {fileID: 564595109174636083, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_SpriteSortPoint
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 564595109174636083, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1393273651288643045, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Name
@@ -118,15 +126,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5807582238916729657, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.02
+      value: 5.77
       objectReference: {fileID: 0}
     - target: {fileID: 5807582238916729657, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.3
+      value: 2.63
       objectReference: {fileID: 0}
     - target: {fileID: 5807582238916729657, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.29
+      value: -1.86
       objectReference: {fileID: 0}
     - target: {fileID: 6481034795117548475, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Layer
@@ -217,6 +225,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350d7cbc72b503946827238bccb3cc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &3393245924384704268 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 564595109174636083, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+  m_PrefabInstance: {fileID: 2937159985936263487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &4110086580789368444 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1282143301385076547, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+  m_PrefabInstance: {fileID: 2937159985936263487}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4293905661852417242 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1393273651288643045, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
@@ -238,15 +256,19 @@ MonoBehaviour:
   - type: 0
     value: 10
     baseValue: 0
+    modifiers: []
   - type: 1
     value: 5
     baseValue: 0
+    modifiers: []
   - type: 2
     value: 0
     baseValue: 0
+    modifiers: []
+  upgrades: []
   healthBar: {fileID: 885606628788954432}
-  sprite: {fileID: 0}
-  shadow: {fileID: 0}
+  sprite: {fileID: 3393245924384704268}
+  shadow: {fileID: 4110086580789368444}
   rb: {fileID: 0}
   coll: {fileID: 0}
   active: 1

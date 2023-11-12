@@ -558,6 +558,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1529560297194406037, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1849516929994192421, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
       propertyPath: m_Name
       value: Canvas

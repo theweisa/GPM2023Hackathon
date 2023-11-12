@@ -10,6 +10,16 @@ public class TreeDamageable : BaseDamageable
     public float pulseRate;
     float pulseTimer=0f;
     // Start is called before the first frame update
+    public override IEnumerator OnSpawn()
+    {
+        Vector3 baseScale = sprite.transform.localScale;
+        sprite.transform.localScale = Vector3.zero;
+        LeanTween.scale(sprite.gameObject, baseScale, 1f).setEaseOutBounce();
+        Vector3 shadowScale = shadow.transform.localScale;
+        shadow.transform.localScale = Vector3.zero;
+        LeanTween.scale(shadow.gameObject, shadowScale, 1f).setEaseInExpo();
+        yield return base.OnSpawn();
+    }
     protected override void Update()
     {
         base.Update();
