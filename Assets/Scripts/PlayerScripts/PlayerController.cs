@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     public void FirePrimary(InputAction.CallbackContext context) {
-        if (context.started && combatant.meter.currentMeter > 0f) {
+        if (context.started && combatant.meter.currentMeter > 0f && Time.timeScale != 0) {
             PlayerPrimary primary = Instantiate(primaryAttack, firePoint.position, weapon.rotation, weapon).GetComponent<PlayerPrimary>();
             primary.Init(combatant);
             primaryRef = primary;
@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void FireSecondary(InputAction.CallbackContext context) {
-        if (!context.started || combatant.meter.currentMeter <= 0f) return;
+        if (!context.started || combatant.meter.currentMeter <= 0f || Time.timeScale == 0) return;
         PlayerSecondary secondary = Instantiate(secondaryAttack, firePoint.position, weapon.rotation, InstantiationManager.Instance.damageSourceParent).GetComponent<PlayerSecondary>();
         secondary.InitProjectile(combatant, fireDirection);
         AudioManager.Instance.PlayAudioChild("secondary", combatant.sounds);

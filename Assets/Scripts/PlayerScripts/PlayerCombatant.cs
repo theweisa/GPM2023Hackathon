@@ -26,12 +26,12 @@ public class PlayerCombatant : BaseCombatant
     protected override void Update()
     {
         base.Update();
-        if (Input.GetKeyDown(KeyCode.L)) {
+        /*if (Input.GetKeyDown(KeyCode.L)) {
             LevelUp();
         }
         if (Input.GetKeyDown(KeyCode.E)) {
             PlantTree();
-        }
+        }*/
     }
 
     public override Stat ApplyDamage(float damageTaken) {
