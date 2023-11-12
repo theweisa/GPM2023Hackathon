@@ -130,6 +130,7 @@ MonoBehaviour:
     value: 10
     baseValue: 0
     modifiers: []
+  sounds: []
   upgrades: []
   healthBar: {fileID: 8764168286506930245}
   sprite: {fileID: 6556644190094176777}
@@ -140,13 +141,13 @@ MonoBehaviour:
   active: 1
   canMove: 1
   energyYield: 20
-  expYield: 20
+  expYield: 30
   expDrop: {fileID: 7587408511367714646, guid: bd27f675a0937b3428ad32c18971b3d0, type: 3}
   movementMultiplier: 1000
   target: {fileID: 0}
   targetTree: 0
   tier: 1
-  chargeAtPlayer: 0
+  chargeAtTarget: 0
   chargeAngle: 30
 --- !u!212 &6556644190094176777 stripped
 SpriteRenderer:

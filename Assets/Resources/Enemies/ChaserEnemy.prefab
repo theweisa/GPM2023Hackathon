@@ -60,6 +60,14 @@ PrefabInstance:
       propertyPath: sprite
       value: 
       objectReference: {fileID: 2898192278568988180}
+    - target: {fileID: 6371744539575165835, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: expYield
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371744539575165835, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: energyYield
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

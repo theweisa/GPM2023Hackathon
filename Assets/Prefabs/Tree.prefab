@@ -652,7 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
   - type: 0
-    value: 10
+    value: 100
     baseValue: 0
     modifiers: []
   - type: 1
