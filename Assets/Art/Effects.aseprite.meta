@@ -127,7 +127,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 76
-      y: 79
+      y: 52
       width: 16
       height: 13
     spriteID: a64b623b4764a1340842450e7b9a055c
@@ -138,7 +138,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 79}
+    uvTransform: {x: 76, y: 52}
   - name: Effects_Frame_1
     originalName: 
     pivot: {x: 0.5, y: -0.1851852}
@@ -186,8 +186,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 76
-      y: 52
+      x: 42
+      y: 99
       width: 18
       height: 19
     spriteID: d31d46ae38431cf488dd007086aa11b5
@@ -198,7 +198,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 76, y: 52}
+    uvTransform: {x: 42, y: 99}
   - name: Effects_Frame_4
     originalName: 
     pivot: {x: 0.5, y: -0.2777778}
@@ -279,6 +279,46 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 76, y: 30}
+  - name: Effects_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: -0.24}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 66
+      width: 18
+      height: 25
+    spriteID: 1628eefaf03cbee45b7fc7b02fe3be31
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 66}
+  - name: Effects_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: -0.15384616}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 32
+      width: 18
+      height: 26
+    spriteID: 79aa00ee14db1614ba63e3b9524beb66
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 32}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -352,6 +392,22 @@ ScriptedImporter:
         width: 28
         height: 14
       spriteId: b98560c6eff09d342bdd6f19d7c3e0ba
+    - name: Effects_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 7
+        y: 6
+        width: 18
+        height: 25
+      spriteId: 1628eefaf03cbee45b7fc7b02fe3be31
+    - name: Effects_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 7
+        y: 4
+        width: 18
+        height: 26
+      spriteId: 79aa00ee14db1614ba63e3b9524beb66
     linkedCells: []
     parentIndex: -1
   platformSettings: []

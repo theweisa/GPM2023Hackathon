@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goop_Guy_Walk_0
+      name: Goop_Guy_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 126687947282fef4c913c6ac655f9c0c
-      internalID: -909219120
+      spriteID: 866e3d2f0bb56c14e963225ca20da79d
+      internalID: 1646183268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goop_Guy_Walk_1
+      name: Goop_Guy_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a25e2ef211898747a1f71a68f5f418b
-      internalID: -516136037
+      spriteID: 2471b2645dd44ad40936086b16b28196
+      internalID: -853194282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goop_Guy_Walk_2
+      name: Goop_Guy_2
       rect:
         serializedVersion: 2
         x: 128
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9886673e5ff08c46b08e8351c77e6a1
-      internalID: -960366040
+      spriteID: 13f649c5affc04d48b8f8cc68d37ee98
+      internalID: -1777963169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goop_Guy_Walk_3
+      name: Goop_Guy_3
       rect:
         serializedVersion: 2
         x: 192
@@ -187,8 +187,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eef61f765b5e21b438d533cbf7f88550
-      internalID: -1870466549
+      spriteID: 7a574696c16fd204ca28841ee34cfce2
+      internalID: 173772565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goop_Guy_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0fd00d6701c561408242a05f39fcca1
+      internalID: 651883867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goop_Guy_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f0a402154b22340959147f3ed5464c
+      internalID: -519095042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goop_Guy_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b1625ead3b0604e9e8a95df4fd3d96
+      internalID: -158647291
       vertices: []
       indices: 
       edges: []
@@ -204,10 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Goop_Guy_Walk_0: -909219120
-      Goop_Guy_Walk_1: -516136037
-      Goop_Guy_Walk_2: -960366040
-      Goop_Guy_Walk_3: -1870466549
+      Goop_Guy_0: 1646183268
+      Goop_Guy_1: -853194282
+      Goop_Guy_2: -1777963169
+      Goop_Guy_3: 173772565
+      Goop_Guy_4: 651883867
+      Goop_Guy_5: -519095042
+      Goop_Guy_6: -158647291
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

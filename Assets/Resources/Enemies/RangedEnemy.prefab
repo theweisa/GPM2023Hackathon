@@ -13,9 +13,13 @@ PrefabInstance:
       value: RangedEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5d868954e17a7ff4fbe7a6b619e76695, type: 3}
+      objectReference: {fileID: 1646183268, guid: 180e6c08e8d890f41a23ba5048ef86ed, type: 3}
     - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -26,6 +30,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2762638248547824357, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}

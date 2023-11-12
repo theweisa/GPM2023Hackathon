@@ -34,6 +34,7 @@ public class RangedEnemy : EnemyCombatant
             canMove = false;
         }
         fireTimer -= Time.deltaTime;
+        anim.SetBool("IsFiring", false);
         if (fireTimer <= 0f) {
             Fire();
             fireTimer = fireRate;
@@ -42,6 +43,7 @@ public class RangedEnemy : EnemyCombatant
     protected virtual void Fire() {
         BaseProjectile proj = Instantiate(projectile, transform.position, Quaternion.identity, InstantiationManager.Instance.damageSourceParent).GetComponent<BaseProjectile>();
         proj.InitProjectile(this, fireDirection);
+        anim.SetBool("IsFiring", true);
     }
 
     protected virtual bool InRange() {
