@@ -56,7 +56,6 @@ public class PlayerController : MonoBehaviour
     void CheckFlip() {
         combatant.sprite.flipX = fireDirection.x > 0f;
         weaponSprite.flipY = fireDirection.x <= 0f;
-        Debug.Log(weapon.rotation.eulerAngles.z);
         weaponSprite.sortingOrder = weapon.rotation.eulerAngles.z > 35 && weapon.rotation.eulerAngles.z < 125 ? combatant.sprite.sortingOrder-1 : combatant.sprite.sortingOrder+1;   
     }
     public void Move(InputAction.CallbackContext context) {

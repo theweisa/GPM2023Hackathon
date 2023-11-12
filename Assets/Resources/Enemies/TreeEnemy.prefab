@@ -26,11 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2762638248547824357, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2762638248547824357, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2762638248547824357, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -102,13 +102,23 @@ MonoBehaviour:
   - type: 0
     value: 0
     baseValue: 0
+    modifiers: []
   - type: 1
     value: 0
     baseValue: 0
+    modifiers: []
   - type: 2
     value: 0
     baseValue: 0
+    modifiers: []
+  upgrades: []
+  healthBar: {fileID: 0}
+  sprite: {fileID: 0}
+  shadow: {fileID: 0}
+  anim: {fileID: 0}
   rb: {fileID: 0}
+  coll: {fileID: 0}
+  active: 1
   canMove: 1
   energyYield: 0
   expYield: 0
