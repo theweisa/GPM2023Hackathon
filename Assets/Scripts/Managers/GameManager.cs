@@ -54,7 +54,7 @@ public class GameManager : UnitySingleton<GameManager>
             {
                 print("NEW ENEMY");
                 //spawn enemy at random location on a circle defined by user-given radius
-                Vector2 newPos = randomCirclePos(new Vector2(0,0), spawnRadius);
+                Vector2 newPos = randomCirclePos(PlayerManager.Instance.transform.position, spawnRadius);
 
                 //GameObject enemy = ResourceManager.Instance.GetEnemyByName("ChaserEnemy");
                 GameObject enemy = selectEnemy();
