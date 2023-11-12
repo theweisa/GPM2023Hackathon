@@ -26,12 +26,13 @@ public class EnemyCombatant : BaseCombatant
         Global.Appear(shadow, 0.3f);
         yield return base.OnSpawn();
     }
-    void GetMoveDirection() {
+
+    public virtual void GetMoveDirection() {
         moveDirection = target.position - transform.position;
         moveDirection.Normalize();
     }
 
-    void MoveCombatant() {
+    public virtual void MoveCombatant() {
         if (!canMove) return;
         GetMoveDirection();
         //rb.velocity = GetStatValue(StatType.Spd) * moveDirection;
