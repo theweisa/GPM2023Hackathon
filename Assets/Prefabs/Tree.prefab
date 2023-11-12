@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 564595109174636083, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 564595109174636083, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 564595109174636083, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1393273651288643045, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Name
       value: Tree
@@ -31,6 +43,26 @@ PrefabInstance:
     - target: {fileID: 2412068418501774050, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888750456022532576, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888750456022532576, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888750456022532576, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888750456022532576, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888750456022532576, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2888750456022532576, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
@@ -54,15 +86,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3667872362060529104, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9999619
       objectReference: {fileID: 0}
     - target: {fileID: 3667872362060529104, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3667872362060529104, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.008727774
       objectReference: {fileID: 0}
     - target: {fileID: 3667872362060529104, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalRotation.z
@@ -74,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3667872362060529104, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3667872362060529104, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -118,19 +150,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8446522471649930153, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.24
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8446522471649930153, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.99
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8446522471649930153, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.99
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8446522471649930153, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -1.26
       objectReference: {fileID: 0}
     - target: {fileID: 8446522471649930153, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -144,7 +176,36 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1393273651288643045, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       insertIndex: 1
       addedObject: {fileID: 4820508310765347666}
+    - targetCorrespondingSourceObject: {fileID: 3045406860053591573, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8469065656814633771}
   m_SourcePrefab: {fileID: 100100000, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+--- !u!1 &180590478623825706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3045406860053591573, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+  m_PrefabInstance: {fileID: 2937159985936263487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8469065656814633771
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180590478623825706}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5c0272f618259a408656bfe067d9a5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &885606628788954432 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2632545277584247935, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
@@ -184,6 +245,10 @@ MonoBehaviour:
     value: 0
     baseValue: 0
   healthBar: {fileID: 885606628788954432}
+  sprite: {fileID: 0}
+  shadow: {fileID: 0}
   rb: {fileID: 0}
+  coll: {fileID: 0}
+  active: 1
   treePulse: {fileID: 5556552613526105787, guid: 8e4d008b7be5ff44b96e3400f7acaff5, type: 3}
   pulseRate: 3
