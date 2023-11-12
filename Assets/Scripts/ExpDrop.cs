@@ -6,12 +6,16 @@ public class ExpDrop : MonoBehaviour
 {
     public float exp;
     public float lifetime;
+    public float initialImpactForce = 13f;
+    public Rigidbody2D rb;
     public void Init(EnemyCombatant enemy) {
         exp = enemy.expYield;
     }
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        rb = rb ? rb : Global.FindComponent<Rigidbody2D>(gameObject);
+        rb.AddForce(initialImpactForce*Random.insideUnitCircle.normalized, ForceMode2D.Impulse);
         StartCoroutine(LifetimeRoutine());
     }
 

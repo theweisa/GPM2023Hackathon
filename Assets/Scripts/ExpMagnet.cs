@@ -6,6 +6,7 @@ public class ExpMagnet : MonoBehaviour
 {
     private bool move = false;
     public float attractMagnitude = 1000f;
+    public float initialImpactForce = 20f;
     public Rigidbody2D rb;
     public float radius;
     void Start() {
@@ -16,7 +17,6 @@ public class ExpMagnet : MonoBehaviour
         if (!move) return;
         float distance = Vector2.Distance(transform.position, PlayerManager.Instance.transform.position);
         Vector2 direction = (PlayerManager.Instance.transform.position - transform.position).normalized;
-        Debug.Log(distance/radius);
         rb.AddForce(direction*(distance/radius)*attractMagnitude*Time.deltaTime);
     }
     // Start is called before the first frame update

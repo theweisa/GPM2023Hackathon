@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1393273651288643045, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Name
-      value: Tree 1
+      value: Tree
       objectReference: {fileID: 0}
     - target: {fileID: 1393273651288643045, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Layer
@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1393273651288643045, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Tree
       objectReference: {fileID: 0}
     - target: {fileID: 1731266932711159159, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_BodyType
@@ -31,6 +31,10 @@ PrefabInstance:
     - target: {fileID: 2412068418501774050, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888750456022532576, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 3045406860053591573, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Layer
@@ -141,6 +145,17 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 4820508310765347666}
   m_SourcePrefab: {fileID: 100100000, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+--- !u!114 &885606628788954432 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2632545277584247935, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+  m_PrefabInstance: {fileID: 2937159985936263487}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350d7cbc72b503946827238bccb3cc07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4293905661852417242 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1393273651288643045, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
@@ -168,7 +183,7 @@ MonoBehaviour:
   - type: 2
     value: 0
     baseValue: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 885606628788954432}
   rb: {fileID: 0}
   treePulse: {fileID: 5556552613526105787, guid: 8e4d008b7be5ff44b96e3400f7acaff5, type: 3}
   pulseRate: 3

@@ -27,6 +27,12 @@ public class PlayerCombatant : BaseCombatant
         
     }
 
+    public override IEnumerator OnDeath()
+    {
+        yield return null;
+        Debug.Log("game over");
+    }
+
     public void AddEnergy(float newEnergy) {
         energy += newEnergy;
         UIManager.Instance.energyBar.UpdateUI(energy, energyThreshold);

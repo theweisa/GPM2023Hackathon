@@ -286,6 +286,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2888750456022532576, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888750456022532576, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_Size.y
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888750456022532576, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 3045406860053591573, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -412,7 +424,11 @@ MonoBehaviour:
     value: 10
     baseValue: 0
   healthBar: {fileID: 8318450884639031944}
+  sprite: {fileID: 0}
+  shadow: {fileID: 0}
   rb: {fileID: 5764340206523906944}
+  coll: {fileID: 0}
+  active: 1
   canMove: 1
   tree: {fileID: 4293905661852417242, guid: e2131036c69c29d4096aab84c52c4db5, type: 3}
   meter: {fileID: 4304723956509524089}

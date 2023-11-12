@@ -46,7 +46,8 @@ public class BaseDamageSource : MonoBehaviour
         if (!active) {
             return;
         }
-        foreach (BaseDamageable damageable in contactedDamageables) {
+        for (int i = contactedDamageables.Count-1; i >= 0; i--) {
+            BaseDamageable damageable = contactedDamageables[i];
             if (hitDamageables.Contains(damageable) && !damageOverTime) continue;
             OnHit(damageable);
         }

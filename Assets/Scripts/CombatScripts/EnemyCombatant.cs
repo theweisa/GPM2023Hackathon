@@ -35,10 +35,11 @@ public class EnemyCombatant : BaseCombatant
 
     public override IEnumerator OnDeath()
     {
+        rb.velocity = Vector2.zero;
+        canMove = false;
         ExpDrop drop = Instantiate(expDrop, transform.position, Quaternion.identity, InstantiationManager.Instance.otherParent).GetComponent<ExpDrop>();
         drop.Init(this);
         PlayerManager.Instance.combatant.AddEnergy(expYield);
         yield return base.OnDeath();
-        Destroy(gameObject);
     }
 }
