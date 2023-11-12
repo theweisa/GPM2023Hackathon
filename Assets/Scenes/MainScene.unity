@@ -695,7 +695,7 @@ PrefabInstance:
     - target: {fileID: 8823975589662583742, guid: 2671256d35f903e49833f80bf6357bf8, type: 3}
       propertyPath: upgrades.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: ed38843972aa99e408cab4ccdd3d1012, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8823975589662583742, guid: 2671256d35f903e49833f80bf6357bf8, type: 3}
       propertyPath: stats.Array.data[3].type
       value: 3
@@ -957,24 +957,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904611400950206348, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
       propertyPath: upgrades.Array.size
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1904611400950206348, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
       propertyPath: upgrades.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: a72959715a417c54a83252249e566cf8, type: 2}
+      objectReference: {fileID: 11400000, guid: 0c3ffb0ff4aa97e4b9686ffeeb85942a, type: 2}
+    - target: {fileID: 1904611400950206348, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
+      propertyPath: upgrades.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 639bd8f416f31e24fa406bb3045c5eb9, type: 2}
+    - target: {fileID: 1904611400950206348, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
+      propertyPath: upgrades.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8817835c32ab44b48aee3977b8a6e045, type: 2}
+    - target: {fileID: 1904611400950206348, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
+      propertyPath: upgrades.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0fc80754092bda441b988ed29d8c9eb1, type: 2}
+    - target: {fileID: 1904611400950206348, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
+      propertyPath: upgrades.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: ed38843972aa99e408cab4ccdd3d1012, type: 2}
     - target: {fileID: 1904611400950206348, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
       propertyPath: upgrades.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: 3baf6c5a54708df479c7a39866beb8bc, type: 2}
+      objectReference: {fileID: 11400000, guid: 1bfa70cf6a549954a8e5549615d786d9, type: 2}
     - target: {fileID: 1904611400950206348, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
       propertyPath: upgrades.Array.data[6]
       value: 
-      objectReference: {fileID: 11400000, guid: 62f719242f1300745820e5e453354cf1, type: 2}
+      objectReference: {fileID: 11400000, guid: 8cb5052323a057540baef7a1857fad49, type: 2}
     - target: {fileID: 1904611400950206348, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
       propertyPath: upgrades.Array.data[7]
       value: 
-      objectReference: {fileID: 11400000, guid: ed38843972aa99e408cab4ccdd3d1012, type: 2}
+      objectReference: {fileID: 11400000, guid: 71e8a4a22e4d053499436934933f072d, type: 2}
+    - target: {fileID: 1904611400950206348, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
+      propertyPath: upgrades.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: a72959715a417c54a83252249e566cf8, type: 2}
+    - target: {fileID: 1904611400950206348, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
+      propertyPath: upgrades.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ebb719f322c7474caab04330efa2f60, type: 2}
+    - target: {fileID: 1904611400950206348, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
+      propertyPath: upgrades.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3baf6c5a54708df479c7a39866beb8bc, type: 2}
+    - target: {fileID: 1904611400950206348, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
+      propertyPath: upgrades.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: 62f719242f1300745820e5e453354cf1, type: 2}
     - target: {fileID: 4595421254167688525, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
       propertyPath: m_TargetGraphic
       value: 

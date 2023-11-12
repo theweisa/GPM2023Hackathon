@@ -25,7 +25,8 @@ MonoBehaviour:
     statLevelUp: 0.1
   image: {fileID: 0}
   id: Faster Battery
-  description: Increase Battery Recharge Speed by 10%
+  description: Increase Battery Recharge Speed
+  levelUpDescription: +10% Recharge Speed
   level: 1
   maxLevel: 5
   spawnWeighting: 10

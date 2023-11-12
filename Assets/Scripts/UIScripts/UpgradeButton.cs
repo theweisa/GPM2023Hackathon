@@ -9,6 +9,7 @@ public class UpgradeButton : MonoBehaviour
     public TMP_Text upgradeName;
     public TMP_Text description;
     public TMP_Text level;
+    public TMP_Text levelUpDescription;
     public Image image;
     Upgrade currUpgrade;
 
@@ -26,6 +27,7 @@ public class UpgradeButton : MonoBehaviour
                 level.text = $"Level: MAX";
             }
         }
+        levelUpDescription.text = $"Level Up: {upgrade.levelUpDescription}";
         
         currUpgrade = upgrade;
         transform.localScale = baseScale;

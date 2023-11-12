@@ -67,7 +67,7 @@ public class EnemyCombatant : BaseCombatant
         canMove = false;
         ExpDrop drop = Instantiate(expDrop, transform.position, Quaternion.identity, InstantiationManager.Instance.otherParent).GetComponent<ExpDrop>();
         drop.Init(this);
-        PlayerManager.Instance.combatant.AddEnergy(expYield);
+        PlayerManager.Instance.combatant.AddEnergy(energyYield);
         yield return base.OnDeath();
     }
 

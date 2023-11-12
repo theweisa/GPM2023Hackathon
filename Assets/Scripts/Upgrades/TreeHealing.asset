@@ -23,9 +23,20 @@ MonoBehaviour:
       modDuration: 0
       baseModTimer: 0
     statLevelUp: 0.3
+  - id: onApply
+    statMod:
+      modValue: 0.1
+      baseModValue: 0
+      modStat: 13
+      modifierCalc: 1
+      modifierType: 0
+      modDuration: 0
+      baseModTimer: 0
+    statLevelUp: 0.1
   image: {fileID: 0}
   id: Nature's Bounty
-  description: Increase Tree healing by 30%
+  description: Increase Tree's range and healing
+  levelUpDescription: +10% Range +30% Healing
   level: 1
   maxLevel: 5
   spawnWeighting: 10

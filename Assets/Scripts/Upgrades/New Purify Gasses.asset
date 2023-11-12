@@ -9,25 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fd045c5bfa65944083be8e90a5a2720, type: 3}
-  m_Name: HealthUpgrade
+  m_Script: {fileID: 11500000, guid: 4dc05a4641e3b1441ae7a0abde519751, type: 3}
+  m_Name: New Purify Gasses
   m_EditorClassIdentifier: 
-  statMods:
-  - id: onApply
-    statMod:
-      modValue: 0.1
-      baseModValue: 0
-      modStat: 0
-      modifierCalc: 1
-      modifierType: 0
-      modDuration: 0
-      baseModTimer: 0
-    statLevelUp: 0.1
+  statMods: []
   image: {fileID: 0}
-  id: Health Mask
-  description: Increase your Max Health
-  levelUpDescription: +10% Max Health
-  level: 0
+  id: Purifying Gasses
+  description: Killing an enemy has a chance of healing the player.
+  levelUpDescription: 30+10% Heal Chance +3 Heal Power
+  level: 1
   maxLevel: 5
   spawnWeighting: 10
   hasCooldown: 0
@@ -35,3 +25,7 @@ MonoBehaviour:
   cooldownTimer: 0
   hostDamageSource: {fileID: 0}
   hostDamageable: {fileID: 0}
+  healChance: 0.3
+  healChanceOnLevel: 0.1
+  healOnKill: 10
+  healOnLevel: 3

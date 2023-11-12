@@ -26,10 +26,12 @@ MonoBehaviour:
   image: {fileID: 0}
   id: Suction Range
   description: Increase size of player attacks
+  levelUpDescription: +0.2 Attack Size
   level: 0
   maxLevel: 5
-  spawnWeighting: 5
+  spawnWeighting: 10
   hasCooldown: 0
   cooldown: 0
+  cooldownTimer: 0
   hostDamageSource: {fileID: 0}
   hostDamageable: {fileID: 0}

@@ -53,7 +53,7 @@ public class PlayerCombatant : BaseCombatant
     }
 
     public void AddEnergy(float newEnergy) {
-        energy += newEnergy;
+        energy += newEnergy * GetStatValue(StatType.EnergyMult);
         UIManager.Instance.energyBar.UpdateUI(energy, energyThreshold);
         if (energy >= energyThreshold) {
             PlantTree();

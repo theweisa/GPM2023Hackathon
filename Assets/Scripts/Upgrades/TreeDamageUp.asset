@@ -35,7 +35,8 @@ MonoBehaviour:
     statLevelUp: 0.2
   image: {fileID: 0}
   id: Efficient Cleansing
-  description: Increase Tree Attack Damage and Attack Rate by 20%
+  description: Increase Tree Attack Damage and Attack Rate
+  levelUpDescription: +2 Tree Attack + 20% Tree Attack Rate
   level: 1
   maxLevel: 5
   spawnWeighting: 10
