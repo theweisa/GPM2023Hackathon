@@ -13,6 +13,10 @@ PrefabInstance:
       value: FastChaserEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1612843518, guid: 648ac51d4e855ad4294159308ea3dc9e, type: 3}
+    - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_Color.b
       value: 0.21306516
       objectReference: {fileID: 0}
@@ -64,6 +68,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6228135154350775844, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2cc01442be7ce5c4eb0adf2421ea34a0, type: 2}
     - target: {fileID: 6371744539575165835, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: tier
       value: 2
@@ -75,6 +83,18 @@ PrefabInstance:
     - target: {fileID: 6371744539575165835, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: stats.Array.data[2].value
       value: 3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027913178008970396, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027913178008970396, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027913178008970396, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

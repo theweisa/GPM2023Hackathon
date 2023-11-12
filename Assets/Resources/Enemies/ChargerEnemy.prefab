@@ -183,7 +183,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTree: 0
   tier: 1
-  chargeAtTarget: 0
+  chargeAtTarget: 1
   chargeAngle: 30
 --- !u!212 &6556644190094176777 stripped
 SpriteRenderer:

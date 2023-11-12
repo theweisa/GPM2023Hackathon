@@ -13,6 +13,10 @@ PrefabInstance:
       value: TreeEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1404869021, guid: 376893de60ec4a740b438d0b50e5955b, type: 3}
+    - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_Color.b
       value: 0.8666667
       objectReference: {fileID: 0}
@@ -72,9 +76,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6228135154350775844, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3ad867821aba40344b15dc0959ece93f, type: 2}
     - target: {fileID: 6371744539575165835, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: targetTree
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027913178008970396, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027913178008970396, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027913178008970396, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.91
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
