@@ -86,6 +86,10 @@ public class StatModifier : IStatMod
     public void SetModBaseValue(float value) {
         baseModValue = value;
     }
+    public void SetMod(float value) {
+        modValue = value;
+        baseModValue = value;
+    }
     public float GetModValue() {
         return modValue;
     }

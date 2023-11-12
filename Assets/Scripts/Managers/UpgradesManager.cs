@@ -22,7 +22,13 @@ public class UpgradesManager : UnitySingleton<UpgradesManager>
     public void ChooseUpgrades() {
         List<Upgrade> tmpUpgrades = new List<Upgrade>(upgrades);
         int totalWeight = 0;
-        foreach (Upgrade upgrade in tmpUpgrades) {
+        for (int i = tmpUpgrades.Count-1; i >= 0; i--) {
+            Upgrade upgrade = tmpUpgrades[i];
+            Upgrade playerUpgrade = PlayerManager.Instance.combatant.ContainsUpgrade(upgrade);
+            if (playerUpgrade && playerUpgrade.level >= playerUpgrade.maxLevel) {
+                tmpUpgrades.Remove(upgrade);
+                continue;
+            }
             totalWeight += upgrade.spawnWeighting;
         }
         foreach (Transform btn in upgradeButtons) {
@@ -33,7 +39,13 @@ public class UpgradesManager : UnitySingleton<UpgradesManager>
                 Upgrade upgrade = tmpUpgrades[i];
                 currentWeight += upgrade.spawnWeighting;
                 if (randomWeight <= currentWeight) {
-                    uBtn.Init(upgrade);
+                    Upgrade playerUpgrade = PlayerManager.Instance.combatant.ContainsUpgrade(upgrade);
+                    if (playerUpgrade) {
+                        uBtn.Init(playerUpgrade);
+                    }
+                    else {
+                        uBtn.Init(upgrade, true);
+                    }
                     tmpUpgrades.RemoveAt(i);
                     totalWeight -= upgrade.spawnWeighting;
                     break;

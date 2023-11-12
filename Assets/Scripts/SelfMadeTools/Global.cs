@@ -34,9 +34,9 @@ public static class Global {
         if (renderer == null) return;
         LeanTween.value(renderer.gameObject, (float val)=>{SetAlpha(renderer, val);}, renderer.color.a, 0, time);
     }
-    public static void Appear(SpriteRenderer renderer, float time) {
+    public static void Appear(SpriteRenderer renderer, float time, float toVis=1f) {
         if (renderer == null) return;
-        LeanTween.value(renderer.gameObject, (float val)=>{SetAlpha(renderer, val);}, 0, 1, time);
+        LeanTween.value(renderer.gameObject, (float val)=>{SetAlpha(renderer, val);}, 0, toVis, time);
     }
     public static bool SetAlpha(GameObject obj, float alpha) {
         bool spriteAlpha = SetAlpha(FindComponent<SpriteRenderer>(obj), alpha);

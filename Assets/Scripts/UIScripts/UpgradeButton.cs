@@ -13,11 +13,17 @@ public class UpgradeButton : MonoBehaviour
     Upgrade currUpgrade;
 
     Vector3 baseScale;
-    public void Init(Upgrade upgrade) {
+    public void Init(Upgrade upgrade, bool nextLevel=false) {
         upgradeName.text = upgrade.id;
         description.text = upgrade.description;
         image.sprite = upgrade.image;
-        level.text = upgrade.level.ToString();
+        if (!nextLevel) {
+            level.text = $"Level: {upgrade.level}";
+        }
+        else {
+            level.text = $"Level: {upgrade.level+1}";
+        }
+        
         currUpgrade = upgrade;
         transform.localScale = baseScale;
     }

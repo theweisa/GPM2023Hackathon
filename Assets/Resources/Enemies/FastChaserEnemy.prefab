@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &765505497253468012
+--- !u!1001 &2327625554288364903
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,27 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 569104617707018960, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_Name
-      value: TreeEnemy
+      value: FastChaserEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_Color.b
-      value: 0.8666667
+      value: 0.21306516
       objectReference: {fileID: 0}
     - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_Color.g
-      value: 0.5372549
+      value: 0.21306516
       objectReference: {fileID: 0}
     - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_Color.r
-      value: 0.7152177
-      objectReference: {fileID: 0}
-    - target: {fileID: 2762638248547824357, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2762638248547824357, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.7169812
       objectReference: {fileID: 0}
     - target: {fileID: 2762638248547824357, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73,8 +65,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6371744539575165835, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
-      propertyPath: targetTree
-      value: 1
+      propertyPath: tier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371744539575165835, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: stats.Array.data[2].value
+      value: 3.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

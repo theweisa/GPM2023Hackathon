@@ -145,20 +145,31 @@ MonoBehaviour:
   - type: 0
     value: 10
     baseValue: 0
+    modifiers: []
   - type: 1
     value: 3
     baseValue: 0
+    modifiers: []
   - type: 2
     value: 2
     baseValue: 0
+    modifiers: []
+  upgrades: []
   healthBar: {fileID: 3474693517199278922}
+  sprite: {fileID: 0}
+  shadow: {fileID: 0}
+  anim: {fileID: 0}
   rb: {fileID: 916069903275817538}
+  coll: {fileID: 0}
+  active: 1
   canMove: 1
   energyYield: 100
   expYield: 95
   expDrop: {fileID: 7587408511367714646, guid: bd27f675a0937b3428ad32c18971b3d0, type: 3}
   movementMultiplier: 600
   target: {fileID: 0}
+  targetTree: 0
+  tier: 1
 --- !u!114 &5537474089682428926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,10 +186,11 @@ MonoBehaviour:
   host: {fileID: 0}
   contactedDamageables: []
   hitDamageables: []
+  upgrades: []
   damageScaling: 1
   knockback: 0
-  hasLifetime: 0
-  lifetime: 0
+  hasLifetime: 1
+  lifetime: 90
   baseDamageScaling: 0
   damage: 0
   active: 1

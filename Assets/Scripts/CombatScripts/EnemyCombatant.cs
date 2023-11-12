@@ -4,26 +4,33 @@ using UnityEngine;
 
 public class EnemyCombatant : BaseCombatant
 {
-    Vector2 moveDirection;
+    protected Vector2 moveDirection;
     public float energyYield;
     public float expYield;
     public GameObject expDrop;
     public float movementMultiplier = 1000f;
     public Transform target;
+    public bool targetTree = false;
+    public int tier = 1;
 
     protected override void Awake() {
         base.Awake();
-        target = PlayerManager.Instance.transform;
+    }
+    protected override void Start()
+    {
+        base.Start();
+        UpdateTarget();
     }
     // Update is called once per frame
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
+        UpdateTarget();
         MoveCombatant();
     }
     public override IEnumerator OnSpawn() {
         Global.Appear(sprite, 0.3f);
-        Global.Appear(shadow, 0.3f);
+        Global.Appear(shadow, 0.3f, shadow.color.a);
         yield return base.OnSpawn();
     }
 
@@ -39,6 +46,21 @@ public class EnemyCombatant : BaseCombatant
         rb.AddForce(GetStatValue(StatType.Spd) * movementMultiplier * moveDirection * Time.deltaTime);
     }
 
+    protected virtual void UpdateTarget() {
+        if (targetTree) {
+            int size = InstantiationManager.Instance.treeParent.transform.childCount;
+            if (size != 0 && (!target || ReferenceEquals(target, PlayerManager.Instance.transform))) {
+                target = InstantiationManager.Instance.treeParent.transform.GetChild(Random.Range(0, size));
+            }
+            else {
+                target = PlayerManager.Instance.transform;
+            }
+        }
+        else if (!target) {
+            target = PlayerManager.Instance.transform;
+        }
+    }
+
     public override IEnumerator OnDeath()
     {
         rb.velocity = Vector2.zero;
@@ -47,5 +69,18 @@ public class EnemyCombatant : BaseCombatant
         drop.Init(this);
         PlayerManager.Instance.combatant.AddEnergy(expYield);
         yield return base.OnDeath();
+    }
+
+    public Transform SelectTarget() {
+        //get Tree Parent Object (from GameManager)
+        if(targetTree){
+            int size = InstantiationManager.Instance.treeParent.transform.childCount;
+            if (size != 0) {
+                //choose random child out of parent.numOfChildren
+                return InstantiationManager.Instance.treeParent.transform.GetChild(Random.Range(0, size));
+            }
+        }
+        //return Player transform
+        return PlayerManager.Instance.transform;
     }
 }

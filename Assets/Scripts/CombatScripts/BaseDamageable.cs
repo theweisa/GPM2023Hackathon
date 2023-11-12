@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class BaseDamageable : MonoBehaviour
 {
@@ -57,6 +58,8 @@ public class BaseDamageable : MonoBehaviour
         hp.SetValue(hp.value-damageTaken);
         UpgradesOnHit(source);
         UpgradesOnSelfHit(source);
+        DamageText dmgTxt = Instantiate(ResourceManager.Instance.GetTextByName("DamageText"), transform.position, Quaternion.identity, InstantiationManager.Instance.otherParent).GetComponent<DamageText>();
+        dmgTxt.Init(damageTaken);
         if (healthBar) {
             healthBar.SetMeter(hp.value, hp.baseValue);
         }
@@ -76,6 +79,8 @@ public class BaseDamageable : MonoBehaviour
         if (amount <= 0) return;
         Stat hp = GetStat(StatType.Hp);
         hp.SetValue(hp.value+amount);
+        DamageText healTxt = Instantiate(ResourceManager.Instance.GetTextByName("DamageText"), transform.position, Quaternion.identity, InstantiationManager.Instance.otherParent).GetComponent<DamageText>();
+        healTxt.Init(amount, DamageText.TextType.Heal);
         if (healthBar) {
             healthBar.SetMeter(hp.value, hp.baseValue);
         }
@@ -102,16 +107,23 @@ public class BaseDamageable : MonoBehaviour
     }
 
     public void AddUpgrade(Upgrade newUpgrade) {
-        foreach (Upgrade upgrade in upgrades) {
-            if (newUpgrade.id == upgrade.id) {
-                newUpgrade.OnLevelUp();
-                upgrade.OnLevelUp();
-                return;
-            }
+        Upgrade upgrade = ContainsUpgrade(newUpgrade);
+        if (upgrade) {
+            upgrade.OnLevelUp();
+            return;
         }
         Upgrade clone = newUpgrade.Clone();
         clone.OnApply(this);
         upgrades.Add(clone);
+    }
+
+    public Upgrade ContainsUpgrade(Upgrade newUpgrade) {
+        foreach (Upgrade upgrade in upgrades) {
+            if (newUpgrade.id == upgrade.id) {
+                return upgrade;
+            }
+        }
+        return null;
     }
 
     public void UpdateUpgrades() {
@@ -159,6 +171,7 @@ public class BaseDamageable : MonoBehaviour
     }
 
     public bool AddModifier(StatModifier mod) {
+        if (mod == null) return false;
         foreach (Stat stat in stats) {
             if (stat.type == mod.modStat) {
                 stat.AddModifier(mod);

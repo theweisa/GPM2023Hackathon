@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2888750456022532576, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2888750456022532576, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
@@ -269,6 +269,7 @@ MonoBehaviour:
   healthBar: {fileID: 885606628788954432}
   sprite: {fileID: 3393245924384704268}
   shadow: {fileID: 4110086580789368444}
+  anim: {fileID: 0}
   rb: {fileID: 0}
   coll: {fileID: 0}
   active: 1
