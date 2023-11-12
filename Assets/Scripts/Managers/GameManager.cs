@@ -21,9 +21,7 @@ public class GameManager : UnitySingleton<GameManager>
 
     public float totalTimer = 300f;
     [SerializeField] float waveInterval; //user sets the length of time between each wave
-    [SerializeField] float spawnInterval;
 
-    [SerializeField] int spawnCount; //user sets how many enemies should get spawned during a wave
     [SerializeField] int curSpawnNum;
 
     [SerializeField] float waveTimer; //public variables so you can see if the timer is working correctly
