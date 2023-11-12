@@ -64,6 +64,7 @@ public class Upgrade : ScriptableObject, IStatMod
 
     // on enemy hit
     public virtual void OnHit(BaseDamageable damageable, BaseDamageSource source) {
+        damageable.AddModifier(GetStatModById("onApply"));
         return;
     }
 
