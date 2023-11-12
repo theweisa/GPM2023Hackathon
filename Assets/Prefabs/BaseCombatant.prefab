@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 777955940707072459}
   - component: {fileID: 1731266932711159159}
   - component: {fileID: 2888750456022532576}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: BaseCombatant
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,6 +59,7 @@ MonoBehaviour:
   - type: 2
     value: 0
     baseValue: 0
+  healthBar: {fileID: 2632545277584247935}
   rb: {fileID: 1731266932711159159}
   canMove: 1
 --- !u!50 &1731266932711159159
@@ -133,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8446522471649930153}
   - component: {fileID: 564595109174636083}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5807582238916729657}
   - component: {fileID: 1282143301385076547}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,6 +393,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02a20bef1dd95e543bfb3cd738c16f0e, type: 3}
+--- !u!114 &2632545277584247935 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3958498269481111296, guid: 02a20bef1dd95e543bfb3cd738c16f0e, type: 3}
+  m_PrefabInstance: {fileID: 1326244981003846527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350d7cbc72b503946827238bccb3cc07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7673333148334618707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8654479358181243692, guid: 02a20bef1dd95e543bfb3cd738c16f0e, type: 3}

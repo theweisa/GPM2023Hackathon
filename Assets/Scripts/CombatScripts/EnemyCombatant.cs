@@ -35,7 +35,7 @@ public class EnemyCombatant : BaseCombatant
 
     public override IEnumerator OnDeath()
     {
-        ExpDrop drop = Instantiate(expDrop, transform.position, Quaternion.identity, InstantiationManager.Instance.transform).GetComponent<ExpDrop>();
+        ExpDrop drop = Instantiate(expDrop, transform.position, Quaternion.identity, InstantiationManager.Instance.otherParent).GetComponent<ExpDrop>();
         drop.Init(this);
         PlayerManager.Instance.combatant.AddEnergy(expYield);
         yield return base.OnDeath();

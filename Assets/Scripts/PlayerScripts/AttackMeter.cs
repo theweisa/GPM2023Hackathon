@@ -21,8 +21,8 @@ public class AttackMeter : Meter
         }
     }
 
-    public override void AddMeter(float amt, LeanTweenType ease=LeanTweenType.easeOutExpo) {
+    public override void DepleteMeter(float amt, LeanTweenType ease=LeanTweenType.easeOutExpo) {
         regenTimer = regenCooldown;
-        base.AddMeter(amt, ease);
+        base.DepleteMeter(amt, ease);
     }
 }

@@ -52,7 +52,7 @@ public class PlayerCombatant : BaseCombatant
     }
 
     void PlantTree() {
-        Instantiate(tree, transform.position, Quaternion.identity, InstantiationManager.Instance.transform);
+        Instantiate(tree, transform.position, Quaternion.identity, InstantiationManager.Instance.treeParent);
     }
 
     void LevelUp() {

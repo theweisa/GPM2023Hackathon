@@ -530,6 +530,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+--- !u!4 &1036374682 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7352002783690859357, guid: da2596a69b78edf459d8ede82e36fa88, type: 3}
+  m_PrefabInstance: {fileID: 7894947212262817261}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1099861118
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +649,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8823975589662583742, guid: 2671256d35f903e49833f80bf6357bf8, type: 3}
+      propertyPath: tree
+      value: 
+      objectReference: {fileID: 4293905661852417242, guid: e2131036c69c29d4096aab84c52c4db5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -787,6 +796,16 @@ CanvasRenderer:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8353747396212841618, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
   m_PrefabInstance: {fileID: 1474012535421644053}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1478943314 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6959711252127491657, guid: da2596a69b78edf459d8ede82e36fa88, type: 3}
+  m_PrefabInstance: {fileID: 7894947212262817261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1555019534 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5427818124102297502, guid: da2596a69b78edf459d8ede82e36fa88, type: 3}
+  m_PrefabInstance: {fileID: 7894947212262817261}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1910543930
 GameObject:
@@ -1206,6 +1225,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1388434718079602217, guid: da2596a69b78edf459d8ede82e36fa88, type: 3}
+      propertyPath: treeParent
+      value: 
+      objectReference: {fileID: 1478943314}
+    - target: {fileID: 1388434718079602217, guid: da2596a69b78edf459d8ede82e36fa88, type: 3}
+      propertyPath: enemyParent
+      value: 
+      objectReference: {fileID: 1555019534}
+    - target: {fileID: 1388434718079602217, guid: da2596a69b78edf459d8ede82e36fa88, type: 3}
+      propertyPath: damageSourceParent
+      value: 
+      objectReference: {fileID: 1036374682}
     - target: {fileID: 1792207309897496622, guid: da2596a69b78edf459d8ede82e36fa88, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

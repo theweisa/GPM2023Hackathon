@@ -411,9 +411,10 @@ MonoBehaviour:
   - type: 2
     value: 10
     baseValue: 0
+  healthBar: {fileID: 8318450884639031944}
   rb: {fileID: 5764340206523906944}
   canMove: 1
-  tree: {fileID: 8354640121844008821, guid: 157d61f2720a6df41b9cbd075d7a4fab, type: 3}
+  tree: {fileID: 4293905661852417242, guid: e2131036c69c29d4096aab84c52c4db5, type: 3}
   meter: {fileID: 4304723956509524089}
   controller: {fileID: 2981163769615601489}
   level: 1
@@ -452,6 +453,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3667872362060529104, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
   m_PrefabInstance: {fileID: 6339307934706241271}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8318450884639031944 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2632545277584247935, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+  m_PrefabInstance: {fileID: 6339307934706241271}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350d7cbc72b503946827238bccb3cc07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7065584938328591829
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -21,16 +21,18 @@ public class Meter : MonoBehaviour
     {
 
     }
-
-    public virtual void AddMeter(float amt, LeanTweenType ease=LeanTweenType.easeOutExpo) {
-        currentMeter = Mathf.Clamp(currentMeter+amt, 0f, maxMeter);
+    public virtual void SetMeter(float newAmt, float maxAmt, LeanTweenType ease=LeanTweenType.easeOutExpo) {
+        maxMeter = maxAmt;
+        currentMeter = Mathf.Clamp(newAmt, 0f, maxAmt);
         StartCoroutine(UpdateMeter(ease));
+    }
+    public virtual void AddMeter(float amt, LeanTweenType ease=LeanTweenType.easeOutExpo) {
+        SetMeter(currentMeter+amt, maxMeter, ease);
     }
     public virtual void DepleteMeter(float amt, LeanTweenType ease=LeanTweenType.easeOutExpo) {
         AddMeter(-amt, ease);
     }
     protected virtual IEnumerator UpdateMeter(LeanTweenType ease=LeanTweenType.easeOutExpo) {
-        trail.localScale = fill.localScale;
         if (ease != LeanTweenType.notUsed) {
             LeanTween.scaleX(fill.gameObject, currentMeter/maxMeter, 0.3f).setEase(ease);
             yield return new WaitForSeconds(0.5f);
