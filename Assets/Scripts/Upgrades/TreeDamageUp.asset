@@ -33,7 +33,7 @@ MonoBehaviour:
       modDuration: 0
       baseModTimer: 0
     statLevelUp: 0.2
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 2b95c00f9805d9145b2cb0481f140bc0, type: 3}
   id: Efficient Cleansing
   description: Increase Tree Attack Damage and Attack Rate
   levelUpDescription: +2 Tree Attack + 20% Tree Attack Rate

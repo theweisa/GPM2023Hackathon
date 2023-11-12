@@ -23,7 +23,7 @@ MonoBehaviour:
       modDuration: 0
       baseModTimer: 0
     statLevelUp: 0.1
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 4033c552d1daddf418494bb2a0f90ec5, type: 3}
   id: Health Mask
   description: Increase your Max Health
   levelUpDescription: +10% Max Health

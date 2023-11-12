@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: New Purify Gasses
   m_EditorClassIdentifier: 
   statMods: []
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: df43d380005c118459794e4fc3d2b606, type: 3}
   id: Purifying Gasses
   description: Killing an enemy has a chance of healing the player.
   levelUpDescription: 30+10% Heal Chance +3 Heal Power

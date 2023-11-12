@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: New Heal Upgrade
   m_EditorClassIdentifier: 
   statMods: []
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: e3ea854240797c442a6021c7103b1734, type: 3}
   id: Fresh Air
   description: Heal the player
   levelUpDescription: +10 Healing

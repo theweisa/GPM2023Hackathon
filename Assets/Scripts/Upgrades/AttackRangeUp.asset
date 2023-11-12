@@ -23,7 +23,7 @@ MonoBehaviour:
       modDuration: 0
       baseModTimer: 0
     statLevelUp: 0.2
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 8afb2f5af58e2b942848b80e24cff73f, type: 3}
   id: Suction Range
   description: Increase size of player attacks
   levelUpDescription: +0.2 Attack Size
