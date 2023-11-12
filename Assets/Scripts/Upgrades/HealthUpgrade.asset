@@ -15,7 +15,7 @@ MonoBehaviour:
   statMods:
   - id: onApply
     statMod:
-      modValue: 1.1
+      modValue: 0.1
       baseModValue: 0
       modStat: 0
       modifierCalc: 1
@@ -24,12 +24,14 @@ MonoBehaviour:
       baseModTimer: 0
     statLevelUp: 0.1
   image: {fileID: 0}
-  id: Health Up
-  description: Increase your Max Health by 10%
+  id: Health Mask
+  description: Increase your Max Health
+  levelUpDescription: +10% Max Health
   level: 0
   maxLevel: 5
-  spawnWeighting: 5
+  spawnWeighting: 10
   hasCooldown: 0
   cooldown: 0
+  cooldownTimer: 0
   hostDamageSource: {fileID: 0}
   hostDamageable: {fileID: 0}

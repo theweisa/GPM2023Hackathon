@@ -6,7 +6,7 @@ using UnityEngine;
 public class TreePulseDamageSource : BaseDamageSource
 {
     [Header("Pulse Variables")]
-    public float healing = 5f;
+    public float healCoef = 1f;
     public bool useCurrentScaleAsFinalScale = true;
     [HideIf("useCurrentScaleAsFinalScale")] public float endScale;
     // expands until its lifespan ends
@@ -15,13 +15,14 @@ public class TreePulseDamageSource : BaseDamageSource
     {
         base.Awake();
         Vector3 eScale = useCurrentScaleAsFinalScale ? transform.localScale : new Vector3(endScale, endScale, endScale);
+        eScale *= PlayerManager.Instance.combatant.GetStatValue(StatType.TreeProjSize);
         transform.localScale = Vector3.zero;
         LeanTween.scale(gameObject, eScale, lifetime).setEaseOutExpo();
     }
 
     public override void OnHit(BaseDamageable damageable) {
         if (damageable.IsPlayer()) {
-            damageable.Heal(healing);
+            damageable.Heal(damageable.GetStatValue(StatType.TreeHeal) * healCoef);
         }
         else {
             damageable.Damage(this);
@@ -33,5 +34,11 @@ public class TreePulseDamageSource : BaseDamageSource
         else if (damageOverTime){
             active = false;
         }
+    }
+    public override IEnumerator OnDeath()
+    {
+        Global.Fade(Global.FindComponent<SpriteRenderer>(gameObject), 0.3f);
+        yield return new WaitForSeconds(0.3f);
+        Destroy(gameObject);
     }
 }

@@ -27,6 +27,11 @@ public class GameManager : UnitySingleton<GameManager>
     [SerializeField] float waveTimer; //public variables so you can see if the timer is working correctly
     [SerializeField] float spawnTimer;
     [SerializeField] float spawnRadius; //size of the circle that spawns enemies
+    public bool startGame = false;
+
+    public void StartGame() {
+        startGame = true;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +47,7 @@ public class GameManager : UnitySingleton<GameManager>
     // Update is called once per frame
     void Update()
     {
+        if (!startGame) return;
         UpdateTimer();
         //every minute, create a wave
         waveTimer -= Time.deltaTime;

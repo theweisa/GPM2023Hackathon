@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerSecondary : BaseProjectile
 {
     public float meterCost;
+    protected override void Awake() {
+        base.Awake();
+        knockback += PlayerManager.Instance.combatant.GetStatValue(StatType.KnockbackUp);
+    }
     public override void Knockback(BaseDamageable damageable) {
         if (host) {
             Debug.Log("knock back");

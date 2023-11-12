@@ -2861,9 +2861,17 @@ PrefabInstance:
       value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 7559384330816586076, guid: 8e0d0f3ff570cc748b7754e29cd42e46, type: 3}
-      propertyPath: m_CompositePaths.m_Paths.Array.size
-      value: 8
+      propertyPath: m_ColliderPaths.Array.size
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7559384330816586076, guid: 8e0d0f3ff570cc748b7754e29cd42e46, type: 3}
+      propertyPath: m_CompositePaths.m_Paths.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559384330816586076, guid: 8e0d0f3ff570cc748b7754e29cd42e46, type: 3}
+      propertyPath: m_ColliderPaths.Array.data[0].m_Collider
+      value: 
+      objectReference: {fileID: 1574305650213147126}
     - target: {fileID: 7559384330816586076, guid: 8e0d0f3ff570cc748b7754e29cd42e46, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.size
       value: 22
@@ -6604,11 +6612,20 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[6].Array.data[29].Y
       value: -140000000
       objectReference: {fileID: 0}
+    - target: {fileID: 8869603342842479445, guid: 8e0d0f3ff570cc748b7754e29cd42e46, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e0d0f3ff570cc748b7754e29cd42e46, type: 3}
+--- !u!19719996 &1574305650213147126 stripped
+TilemapCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8869603342842479445, guid: 8e0d0f3ff570cc748b7754e29cd42e46, type: 3}
+  m_PrefabInstance: {fileID: 7984362734376850083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5809250552209211249 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4490296651953335762, guid: 8e0d0f3ff570cc748b7754e29cd42e46, type: 3}

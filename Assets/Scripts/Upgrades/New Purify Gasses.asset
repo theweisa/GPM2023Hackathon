@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc05a4641e3b1441ae7a0abde519751, type: 3}
+  m_Name: New Purify Gasses
+  m_EditorClassIdentifier: 
+  statMods: []
+  image: {fileID: 0}
+  id: Purifying Gasses
+  description: Killing an enemy has a chance of healing the player.
+  levelUpDescription: 30+10% Heal Chance +3 Heal Power
+  level: 1
+  maxLevel: 5
+  spawnWeighting: 10
+  hasCooldown: 0
+  cooldown: 0
+  cooldownTimer: 0
+  hostDamageSource: {fileID: 0}
+  hostDamageable: {fileID: 0}
+  healChance: 0.3
+  healChanceOnLevel: 0.1
+  healOnKill: 10
+  healOnLevel: 3

@@ -24,12 +24,14 @@ MonoBehaviour:
       baseModTimer: 0
     statLevelUp: 1
   image: {fileID: 21300000, guid: 4ce3e441bc562ff48b28f3dc156aabb5, type: 3}
-  id: Damage Up
-  description: Increase all your damage
+  id: Stronger Suction
+  description: Increase your damage
+  levelUpDescription: +1 Atk
   level: 0
   maxLevel: 5
-  spawnWeighting: 5
+  spawnWeighting: 10
   hasCooldown: 0
   cooldown: 0
+  cooldownTimer: 0
   hostDamageSource: {fileID: 0}
   hostDamageable: {fileID: 0}

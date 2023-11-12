@@ -31,6 +31,7 @@ public class UIManager : UnitySingleton<UIManager>
     }
 
     public void ShowUpgradesScreen() {
+        AudioManager.Instance.PlaySound("UILevelUp");
         Time.timeScale = 0f;
         upgradesScreen.SetActive(true);
         UpgradesManager.Instance.ChooseUpgrades();

@@ -9,8 +9,10 @@ public class UpgradeButton : MonoBehaviour
     public TMP_Text upgradeName;
     public TMP_Text description;
     public TMP_Text level;
+    public TMP_Text levelUpDescription;
     public Image image;
     Upgrade currUpgrade;
+    public AudioSource hover;
 
     Vector3 baseScale;
     public void Init(Upgrade upgrade, bool nextLevel=false) {
@@ -22,7 +24,11 @@ public class UpgradeButton : MonoBehaviour
         }
         else {
             level.text = $"Level: {upgrade.level+1}";
+            if (upgrade.level+1 >= upgrade.maxLevel) {
+                level.text = $"Level: MAX";
+            }
         }
+        levelUpDescription.text = $"Level Up: {upgrade.levelUpDescription}";
         
         currUpgrade = upgrade;
         transform.localScale = baseScale;
@@ -30,12 +36,14 @@ public class UpgradeButton : MonoBehaviour
 
     public void ChooseUpgrade() {
         Debug.Log($"{upgradeName.text} was chosen!");
+        AudioManager.Instance.PlaySound("UIConfirm");
         PlayerManager.Instance.combatant.AddUpgrade(currUpgrade);
         UIManager.Instance.CloseUpgradesScreen();
     }
 
     public void OnHover() {
         Debug.Log("hover");
+        hover.Play();
         LeanTween.scale(gameObject, baseScale*1.13f, 0.2f).setIgnoreTimeScale(true);
     }
     public void OnExit() {

@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd045c5bfa65944083be8e90a5a2720, type: 3}
+  m_Name: TreeHealing
+  m_EditorClassIdentifier: 
+  statMods:
+  - id: onApply
+    statMod:
+      modValue: 0.3
+      baseModValue: 0
+      modStat: 5
+      modifierCalc: 1
+      modifierType: 0
+      modDuration: 0
+      baseModTimer: 0
+    statLevelUp: 0.3
+  - id: onApply
+    statMod:
+      modValue: 0.1
+      baseModValue: 0
+      modStat: 13
+      modifierCalc: 1
+      modifierType: 0
+      modDuration: 0
+      baseModTimer: 0
+    statLevelUp: 0.1
+  image: {fileID: 0}
+  id: Nature's Bounty
+  description: Increase Tree's range and healing
+  levelUpDescription: +10% Range +30% Healing
+  level: 1
+  maxLevel: 5
+  spawnWeighting: 10
+  hasCooldown: 0
+  cooldown: 0
+  cooldownTimer: 0
+  hostDamageSource: {fileID: 0}
+  hostDamageable: {fileID: 0}

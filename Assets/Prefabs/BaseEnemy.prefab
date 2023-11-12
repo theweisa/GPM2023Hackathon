@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8679245
       objectReference: {fileID: 0}
+    - target: {fileID: 564595109174636083, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282143301385076547, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_SortingOrder
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 1393273651288643045, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Name
       value: BaseEnemy
@@ -154,6 +162,7 @@ MonoBehaviour:
     value: 2
     baseValue: 0
     modifiers: []
+  sounds: []
   upgrades: []
   healthBar: {fileID: 3474693517199278922}
   sprite: {fileID: 0}
@@ -163,8 +172,8 @@ MonoBehaviour:
   coll: {fileID: 0}
   active: 1
   canMove: 1
-  energyYield: 100
-  expYield: 95
+  energyYield: 10
+  expYield: 20
   expDrop: {fileID: 7587408511367714646, guid: bd27f675a0937b3428ad32c18971b3d0, type: 3}
   movementMultiplier: 600
   target: {fileID: 0}

@@ -71,6 +71,10 @@ public class BaseDamageSource : MonoBehaviour
     public virtual void Init(BaseDamageable host) {
         this.host = host;
         damage = damageScaling * host.GetStatValue(StatType.Atk);
+        Stat projSize = host.GetStat(StatType.ProjSize);
+        if (projSize != null) {
+            transform.localScale *= projSize.value;
+        }
         ApplyUpgrades(host.upgrades);
     }
 
