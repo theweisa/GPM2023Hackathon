@@ -66,9 +66,6 @@ public class GameManager : UnitySingleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I)) {
-            WinGame();
-        }
         if (!startGame) {
             StartGame();
             return;
