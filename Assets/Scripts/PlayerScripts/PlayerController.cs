@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
     public void FireSecondary(InputAction.CallbackContext context) {
         if (!context.started || combatant.meter.currentMeter <= 0f) return;
-        PlayerSecondary secondary = Instantiate(secondaryAttack, firePoint.position, weapon.rotation, InstantiationManager.Instance.transform).GetComponent<PlayerSecondary>();
+        PlayerSecondary secondary = Instantiate(secondaryAttack, firePoint.position, weapon.rotation, InstantiationManager.Instance.damageSourceParent).GetComponent<PlayerSecondary>();
         secondary.InitProjectile(combatant, fireDirection);
         combatant.meter.DepleteMeter(secondary.meterCost);
     }

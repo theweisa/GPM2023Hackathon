@@ -46,7 +46,8 @@ public class BaseDamageSource : MonoBehaviour
         if (!active) {
             return;
         }
-        foreach (BaseDamageable damageable in contactedDamageables) {
+        for (int i = contactedDamageables.Count-1; i >= 0; i--) {
+            BaseDamageable damageable = contactedDamageables[i];
             if (hitDamageables.Contains(damageable) && !damageOverTime) continue;
             OnHit(damageable);
         }
@@ -94,7 +95,7 @@ public class BaseDamageSource : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D coll) {
         BaseDamageable damageable = Global.FindComponent<BaseDamageable>(coll.gameObject);
-        if (damageable && !ReferenceEquals(host.gameObject, damageable.gameObject)) {
+        if (damageable && host && !ReferenceEquals(host.gameObject, damageable.gameObject)) {
             contactedDamageables.Add(damageable);
         }
     }

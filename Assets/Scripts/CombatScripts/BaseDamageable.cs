@@ -2,20 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class BaseDamageable : MonoBehaviour
 {
     public List<Stat> stats = new List<Stat>() {
         new Stat(StatType.Hp), new Stat(StatType.Atk), new Stat(StatType.Spd)
     };
+    [Header("References")]
+    [Space(4)]
+    public Meter healthBar;
+    public SpriteRenderer sprite;
+    public SpriteRenderer shadow;
     public Rigidbody2D rb;
+    public Collider2D coll;
+    [HideInInspector] public bool active = true;
     // Start is called before the first frame update
     protected virtual void Start() {
 
     }
     virtual protected void Awake() {
         rb = rb ? rb : Global.FindComponent<Rigidbody2D>(gameObject);
+        healthBar = healthBar ? healthBar : Global.FindComponent<Meter>(gameObject);
+        sprite = sprite ? sprite : Global.FindComponent<SpriteRenderer>(gameObject);
+        shadow = shadow ? shadow : transform.Find("Shadow").GetComponent<SpriteRenderer>();
+        coll = coll ? coll : Global.FindComponent<Collider2D>(gameObject);
         InitStats();
+        if (healthBar) {
+            healthBar.maxMeter = GetStat(StatType.Hp).baseValue;
+            healthBar.currentMeter = healthBar.maxMeter;
+        }
     }
 
     // Update is called once per frame
@@ -31,18 +47,42 @@ public class BaseDamageable : MonoBehaviour
 
     virtual public void Damage(BaseDamageSource source) {
         float damageTaken = source.damage;
-        //if (damageTaken <= 0) return;
+        if (damageTaken <= 0) return;
         Stat hp = GetStat(StatType.Hp);
         hp.SetValue(hp.value-damageTaken);
+        if (healthBar) {
+            healthBar.SetMeter(hp.value, hp.baseValue);
+        }
         source.Knockback(this);
         Debug.Log($"{gameObject.name} hp: {hp.value} after {damageTaken} damage taken");
-        if (hp.value <= 0) {
+        if (hp.value <= 0 && active) {
             StartCoroutine(OnDeath());
         }
     }
 
+    virtual public void Heal(BaseDamageSource source) {
+        Heal(source.damage);
+    }
+
+    virtual public void Heal(float amount) {
+        if (amount <= 0) return;
+        Stat hp = GetStat(StatType.Hp);
+        hp.SetValue(hp.value+amount);
+        if (healthBar) {
+            healthBar.SetMeter(hp.value, hp.baseValue);
+        }
+        Debug.Log($"{gameObject.name} hp: {hp.value} after {amount} healing");
+    }
+
     virtual public IEnumerator OnDeath() {
-        yield return null;
+        if (active) {
+            coll.enabled = false;
+            active = false;
+            Global.Fade(sprite, 0.4f);
+            Global.Fade(shadow, 0.4f);
+            yield return new WaitForSeconds(0.4f);
+            Destroy(gameObject);
+        }
     }
 
     virtual protected void InitStats() {

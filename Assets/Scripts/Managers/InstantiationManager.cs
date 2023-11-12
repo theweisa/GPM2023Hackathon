@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class InstantiationManager : UnitySingleton<InstantiationManager>
 {
+    public Transform treeParent;
+    public Transform enemyParent;
+    public Transform damageSourceParent;
+    public Transform otherParent;
     // Start is called before the first frame update
     void Start()
     {

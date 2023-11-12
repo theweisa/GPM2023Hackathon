@@ -6,6 +6,7 @@ using UnityEngine;
 public class TreePulseDamageSource : BaseDamageSource
 {
     [Header("Pulse Variables")]
+    public float healing = 5f;
     public bool useCurrentScaleAsFinalScale = true;
     [HideIf("useCurrentScaleAsFinalScale")] public float endScale;
     // expands until its lifespan ends
@@ -20,7 +21,7 @@ public class TreePulseDamageSource : BaseDamageSource
 
     public override void OnHit(BaseDamageable damageable) {
         if (damageable.IsPlayer()) {
-            Debug.Log("Heal Player");
+            damageable.Heal(healing);
         }
         else {
             damageable.Damage(this);

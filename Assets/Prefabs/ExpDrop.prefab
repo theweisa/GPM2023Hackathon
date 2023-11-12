@@ -196,6 +196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exp: 0
   lifetime: 100
+  initialImpactForce: 13
+  rb: {fileID: 0}
 --- !u!1 &7654243191646902962
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,5 +307,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attractMagnitude: 5000
+  initialImpactForce: 20
   rb: {fileID: 3545621348153970947}
   radius: 0

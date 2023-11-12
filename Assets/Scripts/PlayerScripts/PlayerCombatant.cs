@@ -27,6 +27,12 @@ public class PlayerCombatant : BaseCombatant
         
     }
 
+    public override IEnumerator OnDeath()
+    {
+        yield return null;
+        Debug.Log("game over");
+    }
+
     public void AddEnergy(float newEnergy) {
         energy += newEnergy;
         UIManager.Instance.energyBar.UpdateUI(energy, energyThreshold);
@@ -52,7 +58,7 @@ public class PlayerCombatant : BaseCombatant
     }
 
     void PlantTree() {
-        Instantiate(tree, transform.position, Quaternion.identity, InstantiationManager.Instance.transform);
+        Instantiate(tree, transform.position, Quaternion.identity, InstantiationManager.Instance.treeParent);
     }
 
     void LevelUp() {

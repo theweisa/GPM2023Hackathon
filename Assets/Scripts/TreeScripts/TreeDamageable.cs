@@ -10,14 +10,9 @@ public class TreeDamageable : BaseDamageable
     public float pulseRate;
     float pulseTimer=0f;
     // Start is called before the first frame update
-    void Start()
+    protected override void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        base.Update();
         UpdateTimers();
     }
 
@@ -30,7 +25,7 @@ public class TreeDamageable : BaseDamageable
     }
 
     void Pulse() {
-        TreePulseDamageSource pulse = Instantiate(treePulse, transform.position, Quaternion.identity, InstantiationManager.Instance.transform).GetComponent<TreePulseDamageSource>();
+        TreePulseDamageSource pulse = Instantiate(treePulse, transform.position, Quaternion.identity, InstantiationManager.Instance.damageSourceParent).GetComponent<TreePulseDamageSource>();
         pulse.Init(this);
     }
 }
