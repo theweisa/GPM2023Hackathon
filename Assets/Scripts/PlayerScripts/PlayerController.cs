@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     // private variables
     Vector2 moveDirection;
     Vector2 fireDirection;
+    SpriteRenderer weaponSprite;
     float weaponRadius;
     [HideInInspector] public Transform firePoint;
     [HideInInspector] public BaseDamageSource primaryRef;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
         combatant = combatant ? combatant : Global.FindComponent<PlayerCombatant>(gameObject);
         weaponRadius = weapon.localPosition.magnitude;
         firePoint = weapon.Find("FirePoint").transform;
+        weaponSprite = Global.FindComponent<SpriteRenderer>(weapon.gameObject);
     }
 
     void SetWeaponPosition() {
@@ -48,9 +50,23 @@ public class PlayerController : MonoBehaviour
     {
         ApplyMovement();
         SetWeaponPosition();
+        CheckFlip();
+    }
+
+    void CheckFlip() {
+        combatant.sprite.flipX = fireDirection.x > 0f;
+        weaponSprite.flipY = fireDirection.x <= 0f;
+        Debug.Log(weapon.rotation.eulerAngles.z);
+        weaponSprite.sortingOrder = weapon.rotation.eulerAngles.z > 35 && weapon.rotation.eulerAngles.z < 125 ? combatant.sprite.sortingOrder-1 : combatant.sprite.sortingOrder+1;   
     }
     public void Move(InputAction.CallbackContext context) {
         moveDirection = context.ReadValue<Vector2>();
+        if (moveDirection != Vector2.zero) {
+            combatant.anim.Play("playerRun", -1, 0f);
+        }
+        else {
+            combatant.anim.Play("playerIdle", -1, 0f);
+        }
     }
     public void FirePrimary(InputAction.CallbackContext context) {
         if (context.started && combatant.meter.currentMeter > 0f) {

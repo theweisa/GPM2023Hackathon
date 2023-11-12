@@ -15,6 +15,7 @@ public class BaseDamageable : MonoBehaviour
     public Meter healthBar;
     public SpriteRenderer sprite;
     public SpriteRenderer shadow;
+    public Animator anim;
     public Rigidbody2D rb;
     public Collider2D coll;
     [HideInInspector] public bool active = true;
@@ -25,6 +26,7 @@ public class BaseDamageable : MonoBehaviour
         sprite = sprite ? sprite : Global.FindComponent<SpriteRenderer>(gameObject);
         shadow = shadow ? shadow : transform.Find("Shadow").GetComponent<SpriteRenderer>();
         coll = coll ? coll : Global.FindComponent<Collider2D>(gameObject);
+        anim = anim ? anim : Global.FindComponent<Animator>(gameObject);
         InitStats();
         StartCoroutine(OnSpawn());
         if (healthBar) {
@@ -33,7 +35,7 @@ public class BaseDamageable : MonoBehaviour
         }
     }
     virtual protected void Start() {
-        
+
     }
 
     // Update is called once per frame
