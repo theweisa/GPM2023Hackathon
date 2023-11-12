@@ -13,16 +13,20 @@ PrefabInstance:
       value: ChargerEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -129099060, guid: fb26f4fc2210a9c41872ba1bf5014df5, type: 3}
+    - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_Color.b
-      value: 0.5377358
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_Color.g
-      value: 0.33230245
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1397772719084822790, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_Color.r
-      value: 0.22067462
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2762638248547824357, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64,6 +68,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4911342406469768204, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911342406469768204, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911342406469768204, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 5537474089682428926, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: lifetime
       value: 5
@@ -72,9 +88,29 @@ PrefabInstance:
       propertyPath: hasLifetime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6228135154350775844, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 922a48529cb71194ea3828d1ec539d89, type: 2}
     - target: {fileID: 6371744539575165835, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: stats.Array.data[2].value
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027913178008970396, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027913178008970396, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027913178008970396, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136991605544744806, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6371744539575165835, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
@@ -146,7 +182,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTree: 0
   tier: 1
-  chargeAtPlayer: 0
+  chargeAtTarget: 0
   chargeAngle: 30
 --- !u!212 &6556644190094176777 stripped
 SpriteRenderer:
