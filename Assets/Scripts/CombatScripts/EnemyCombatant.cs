@@ -27,6 +27,7 @@ public class EnemyCombatant : BaseCombatant
         base.FixedUpdate();
         UpdateTarget();
         MoveCombatant();
+        sprite.flipX = target.position.x > transform.position.x;
     }
     public override IEnumerator OnSpawn() {
         Global.Appear(sprite, 0.3f);

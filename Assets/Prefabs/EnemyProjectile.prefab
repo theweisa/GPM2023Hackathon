@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1648136489141402292, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f9613dea95c13594285602fc01182d8c, type: 2}
     - target: {fileID: 3072528493608390672, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Name
       value: EnemyProjectile
@@ -23,6 +27,34 @@ PrefabInstance:
     - target: {fileID: 3326572672109225032, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 4970235359860201050, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Layer
@@ -69,16 +101,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8218084805748586443, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1432674457, guid: 3530c4323895dcd48806f3ede1b19e2d, type: 3}
+    - target: {fileID: 8218084805748586443, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Color.b
-      value: 0.23949803
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8218084805748586443, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Color.g
-      value: 0.23949803
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8218084805748586443, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Color.r
-      value: 0.735849
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 892757248866016366, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
@@ -127,3 +163,4 @@ MonoBehaviour:
   destroyOnContact: 1
   hitRate: 0
   projectileSpeed: 4
+  addedAngle: 0
