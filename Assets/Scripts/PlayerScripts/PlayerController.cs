@@ -51,6 +51,9 @@ public class PlayerController : MonoBehaviour
         ApplyMovement();
         SetWeaponPosition();
         CheckFlip();
+        if (!primaryRef && AudioManager.Instance.GetSound("primary").isPlaying) {
+            EndPrimary();
+        }
     }
 
     void CheckFlip() {
@@ -72,6 +75,7 @@ public class PlayerController : MonoBehaviour
             PlayerPrimary primary = Instantiate(primaryAttack, firePoint.position, weapon.rotation, weapon).GetComponent<PlayerPrimary>();
             primary.Init(combatant);
             primaryRef = primary;
+            AudioManager.Instance.PlaySound("primary");
         }
         else if (context.canceled) {
             EndPrimary();
@@ -79,14 +83,18 @@ public class PlayerController : MonoBehaviour
     }
 
     public void EndPrimary() {
-        if (!primaryRef) return;
-        StartCoroutine(primaryRef.OnDeath());
+        AudioManager.Instance.PlaySound("primaryOff");
+        AudioManager.Instance.StopSound("primary");
+        if (primaryRef) {
+            StartCoroutine(primaryRef.OnDeath());
+        }
     }
 
     public void FireSecondary(InputAction.CallbackContext context) {
         if (!context.started || combatant.meter.currentMeter <= 0f) return;
         PlayerSecondary secondary = Instantiate(secondaryAttack, firePoint.position, weapon.rotation, InstantiationManager.Instance.damageSourceParent).GetComponent<PlayerSecondary>();
         secondary.InitProjectile(combatant, fireDirection);
+        AudioManager.Instance.PlayAudioChild("secondary", combatant.sounds);
         combatant.meter.DepleteMeter(secondary.meterCost);
     }
 

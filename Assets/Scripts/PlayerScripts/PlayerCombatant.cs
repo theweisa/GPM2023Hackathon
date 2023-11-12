@@ -37,6 +37,7 @@ public class PlayerCombatant : BaseCombatant
     public override Stat ApplyDamage(float damageTaken) {
         Stat hp = base.ApplyDamage(damageTaken);
         // call damage sound here
+        AudioManager.Instance.PlayAudioChild("hit", sounds);
         return hp;
     }
 

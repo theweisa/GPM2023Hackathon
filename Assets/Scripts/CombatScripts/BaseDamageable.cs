@@ -10,6 +10,7 @@ public class BaseDamageable : MonoBehaviour
     public List<Stat> stats = new List<Stat>() {
         new Stat(StatType.Hp), new Stat(StatType.Atk), new Stat(StatType.Spd)
     };
+    public List<AudioChild> sounds = new List<AudioChild>();
     public List<Upgrade> upgrades = new List<Upgrade>();
     [Header("References")]
     [Space(4)]

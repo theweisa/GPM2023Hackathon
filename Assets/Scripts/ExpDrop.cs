@@ -8,6 +8,7 @@ public class ExpDrop : MonoBehaviour
     public float lifetime;
     public float initialImpactForce = 13f;
     public Rigidbody2D rb;
+    public AudioSource pickup;
     public void Init(EnemyCombatant enemy) {
         exp = enemy.expYield;
     }
@@ -29,8 +30,15 @@ public class ExpDrop : MonoBehaviour
         if (coll.CompareTag("Player")) {
             Debug.Log("collect");
             PlayerManager.Instance.combatant.AddExp(exp);
-            Destroy(gameObject);
+            StartCoroutine(PickUp());
         }
-        
+    }
+    IEnumerator PickUp() {
+        pickup.Play();
+        GetComponent<Collider2D>().enabled = false;
+        Global.FindComponent<SpriteRenderer>(gameObject).enabled = false;
+        //gameObject.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 }

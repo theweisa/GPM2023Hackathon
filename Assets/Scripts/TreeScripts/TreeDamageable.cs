@@ -19,9 +19,7 @@ public class TreeDamageable : BaseDamageable
         hp.SetStat(hp.baseValue*(1+PlayerManager.Instance.combatant.GetStatValue(StatType.TreeHpMult)));
         atk.SetStat(atk.baseValue+PlayerManager.Instance.combatant.GetStatValue(StatType.TreeAtkUp));
         pulseRate *= 1+PlayerManager.Instance.combatant.GetStatValue(StatType.TreeFireRateMult);
-        if (PlayerManager.Instance.combatant) {
-            
-        }
+        AudioManager.Instance.PlayAudioChild(sounds[Random.Range(0, sounds.Count)].id, sounds);
         
     }
     public override IEnumerator OnSpawn()
