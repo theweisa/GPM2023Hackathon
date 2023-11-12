@@ -23,7 +23,7 @@ MonoBehaviour:
       modDuration: 0
       baseModTimer: 0
     statLevelUp: 0.2
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 1c9b37126f796504c91a931a000eda36, type: 3}
   id: Sturdy Wood
   description: Increase Tree's Max HP
   levelUpDescription: +20% Tree Hp

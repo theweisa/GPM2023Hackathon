@@ -33,7 +33,7 @@ MonoBehaviour:
       modDuration: 0
       baseModTimer: 0
     statLevelUp: 0.1
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 54432a7f92754c841ad6fe8922407ff9, type: 3}
   id: Chemical Mask
   description: Increase attack and energy gain, but take damage constantly.
   levelUpDescription: +10% Atk +10% Energy Gain +1 Self Damage
