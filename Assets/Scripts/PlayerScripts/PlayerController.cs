@@ -11,15 +11,19 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public PlayerCombatant combatant;
     public Transform weapon;
-    public GameObject suckMelee;
+    public GameObject primaryAttack;
+    public GameObject secondaryAttack;
     [Header("Variables")]
     [Space(4)]
+    [Tooltip("cost per second")] public float primaryMeterCostPerSecond = 20f;
+    public float secondaryMeterCost = 33f;
+
+    // private variables
     Vector2 moveDirection;
     Vector2 fireDirection;
-    
     float weaponRadius;
     [HideInInspector] public Transform firePoint;
-    [HideInInspector] public BaseDamageSource holdDmgRef;
+    [HideInInspector] public BaseDamageSource primaryRef;
     
 
     // Start is called before the first frame update
@@ -48,15 +52,27 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context) {
         moveDirection = context.ReadValue<Vector2>();
     }
-    public void Fire(InputAction.CallbackContext context) {
-        if (context.started) {
-            BaseDamageSource melee = Instantiate(suckMelee, firePoint.position, weapon.rotation, weapon).GetComponent<BaseDamageSource>();
-            melee.Init(combatant);
-            holdDmgRef = melee;
+    public void FirePrimary(InputAction.CallbackContext context) {
+        if (context.started && combatant.meter.currentMeter > 0f) {
+            PlayerPrimary primary = Instantiate(primaryAttack, firePoint.position, weapon.rotation, weapon).GetComponent<PlayerPrimary>();
+            primary.Init(combatant);
+            primaryRef = primary;
         }
-        else if (context.canceled && holdDmgRef) {
-            StartCoroutine(holdDmgRef.OnDeath());
+        else if (context.canceled) {
+            EndPrimary();
         }
+    }
+
+    public void EndPrimary() {
+        if (!primaryRef) return;
+        StartCoroutine(primaryRef.OnDeath());
+    }
+
+    public void FireSecondary(InputAction.CallbackContext context) {
+        if (!context.started || combatant.meter.currentMeter <= 0f) return;
+        PlayerSecondary secondary = Instantiate(secondaryAttack, firePoint.position, weapon.rotation, InstantiationManager.Instance.transform).GetComponent<PlayerSecondary>();
+        secondary.InitProjectile(combatant, fireDirection);
+        combatant.meter.DepleteMeter(secondary.meterCost);
     }
 
     void ApplyMovement() {

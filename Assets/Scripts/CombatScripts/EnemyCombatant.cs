@@ -8,14 +8,17 @@ public class EnemyCombatant : BaseCombatant
     public float energyYield;
     public float expYield;
     public GameObject expDrop;
+    public float movementMultiplier = 1000f;
     public Transform target;
 
-    void Start() {
+    protected override void Start() {
+        base.Start();
         target = PlayerManager.Instance.transform;
     }
     // Update is called once per frame
-    void FixedUpdate()
+    protected override void FixedUpdate()
     {
+        base.FixedUpdate();
         MoveCombatant();
     }
     void GetMoveDirection() {
@@ -26,8 +29,10 @@ public class EnemyCombatant : BaseCombatant
     void MoveCombatant() {
         if (!canMove) return;
         GetMoveDirection();
-        rb.velocity = GetStatValue(StatType.Spd) * moveDirection;
+        //rb.velocity = GetStatValue(StatType.Spd) * moveDirection;
+        rb.AddForce(GetStatValue(StatType.Spd) * movementMultiplier * moveDirection * Time.deltaTime);
     }
+
     public override IEnumerator OnDeath()
     {
         ExpDrop drop = Instantiate(expDrop, transform.position, Quaternion.identity, InstantiationManager.Instance.transform).GetComponent<ExpDrop>();

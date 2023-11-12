@@ -178,14 +178,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3072528493608390672, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5939218675646136028}
+      addedObject: {fileID: -7392100709935844038}
   m_SourcePrefab: {fileID: 100100000, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
 --- !u!1 &3203298248706525289 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3072528493608390672, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
   m_PrefabInstance: {fileID: 493063532997499001}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5939218675646136028
+--- !u!114 &-7392100709935844038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,22 +194,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 3203298248706525289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7291dcad195e09c4494ec6177c12f7c2, type: 3}
+  m_Script: {fileID: 11500000, guid: dae240da30a34c64fb874f4384afc290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   host: {fileID: 0}
   contactedDamageables: []
   hitDamageables: []
-  damageScaling: 1
+  damageScaling: 0.1
+  knockback: -2
   hasLifetime: 0
-  lifetime: -1
+  lifetime: 0
   baseDamageScaling: 0
   damage: 0
   active: 1
   damageOverTime: 1
   destroyOnContact: 0
-  hitRate: 1
+  hitRate: 0.1
+  meterPerSecond: 20
 --- !u!4 &7287178309727648285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7203213740273869412, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}

@@ -24,4 +24,9 @@ public class EnergyBarUI : MonoBehaviour
         energyText.text = $"Energy: {(ratio*100f).ToString("F1")}%";
         LeanTween.scaleX(bar.gameObject, ratio, 0.7f).setEaseOutExpo();
     }
+
+    public void ResetUI() {
+        energyText.text = $"Energy: 0.0%";
+        bar.localScale = new Vector3(0f, bar.localScale.y, bar.localScale.z);
+    }
 }
