@@ -50,10 +50,10 @@ public class PlayerCombatant : BaseCombatant
         exp += newExp;
         UIManager.Instance.expBar.UpdateUI(exp, expThreshold);
         if (exp >= expThreshold) {
-            LevelUp();
             float rem = exp - expThreshold;
-            UIManager.Instance.expBar.ResetUI();
             exp = 0;
+            UIManager.Instance.expBar.ResetUI();
+            LevelUp();
             AddExp(rem);
         }
     }

@@ -50,12 +50,15 @@ public class BaseDamageable : MonoBehaviour
         if (damageTaken <= 0) return;
         Stat hp = GetStat(StatType.Hp);
         hp.SetValue(hp.value-damageTaken);
+        UpgradesOnHit(source);
+        UpgradesOnSelfHit(source);
         if (healthBar) {
             healthBar.SetMeter(hp.value, hp.baseValue);
         }
         source.Knockback(this);
         Debug.Log($"{gameObject.name} hp: {hp.value} after {damageTaken} damage taken");
         if (hp.value <= 0 && active) {
+            UpgradesOnKill(source);
             StartCoroutine(OnDeath());
         }
     }
@@ -96,20 +99,34 @@ public class BaseDamageable : MonoBehaviour
     public void AddUpgrade(Upgrade newUpgrade) {
         foreach (Upgrade upgrade in upgrades) {
             if (newUpgrade.id == upgrade.id) {
-                newUpgrade.LevelUp();
-                upgrade.LevelUp();
+                newUpgrade.OnLevelUp();
+                upgrade.OnLevelUp();
                 return;
             }
         }
         Upgrade clone = newUpgrade.Clone();
-        clone.SetHostDamageable(this);
-        clone.OnApply();
+        clone.OnApply(this);
         upgrades.Add(clone);
     }
 
     public void UpdateUpgrades() {
         foreach (Upgrade upgrade in upgrades) {
             upgrade.OnDamageableUpdate(this);
+        }
+    }
+    public void UpgradesOnHit(BaseDamageSource source) {
+        foreach (Upgrade u in source.upgrades) {
+            u.OnHit(this, source);
+        }
+    }
+    public void UpgradesOnSelfHit(BaseDamageSource source) {
+        foreach (Upgrade u in upgrades) {
+            u.OnHostHit(this, source);
+        }
+    }
+    public void UpgradesOnKill(BaseDamageSource source) {
+        foreach (Upgrade u in source.upgrades) {
+            u.OnKill(this, source);
         }
     }
 

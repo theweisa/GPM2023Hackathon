@@ -11,12 +11,15 @@ public class UpgradeButton : MonoBehaviour
     public TMP_Text level;
     public Image image;
     Upgrade currUpgrade;
+
+    Vector3 baseScale;
     public void Init(Upgrade upgrade) {
         upgradeName.text = upgrade.id;
         description.text = upgrade.description;
-        if (upgrade.image) image.sprite = upgrade.image;
+        image.sprite = upgrade.image;
         level.text = upgrade.level.ToString();
         currUpgrade = upgrade;
+        transform.localScale = baseScale;
     }
 
     public void ChooseUpgrade() {
@@ -24,10 +27,18 @@ public class UpgradeButton : MonoBehaviour
         PlayerManager.Instance.combatant.AddUpgrade(currUpgrade);
         UIManager.Instance.CloseUpgradesScreen();
     }
+
+    public void OnHover() {
+        Debug.Log("hover");
+        LeanTween.scale(gameObject, baseScale*1.13f, 0.2f).setIgnoreTimeScale(true);
+    }
+    public void OnExit() {
+        LeanTween.scale(gameObject, baseScale, 0.2f).setIgnoreTimeScale(true);
+    }
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        baseScale = transform.localScale;
     }
 
     // Update is called once per frame

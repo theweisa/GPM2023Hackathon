@@ -115,7 +115,6 @@ public class BaseDamageSource : MonoBehaviour
     public virtual void ApplyUpgrades(List<Upgrade> newUpgrades) {
         foreach (Upgrade u in newUpgrades) {
             Upgrade clone = u.Clone();
-            clone.SetHostDamageSource(this);
             upgrades.Add(clone);
             clone.OnDamageSource(this);
         }

@@ -18,18 +18,19 @@ public class Upgrade : ScriptableObject, IStatMod
     [HideInInspector] public BaseDamageable hostDamageable;
     float baseCooldown;
     // Start is called before the first frame update
-    void InitUpgrade() {
+    public virtual void InitUpgrade() {
         if (!hasCooldown) {
             cooldown = 0;
         }
         baseCooldown = cooldown;
     }
-    public virtual void LevelUp() {
+    public virtual void OnLevelUp() {
         level++;
     }
 
     // when the mod is first added to the form unit
-    public virtual void OnApply() {
+    public virtual void OnApply(BaseDamageable damageable) {
+        SetHostDamageable(damageable);
         InitUpgrade();
         return;
     }
@@ -41,6 +42,7 @@ public class Upgrade : ScriptableObject, IStatMod
 
     // on init of a damage source
     public virtual void OnDamageSource(BaseDamageSource source) {
+        SetHostDamageSource(source);
         return;
     }
 
@@ -54,16 +56,8 @@ public class Upgrade : ScriptableObject, IStatMod
         return;
     }
 
-    // if you need something actively on update
-    public virtual void OnUpdate() {
+    public virtual void OnHostHit(BaseDamageable damageable, BaseDamageSource souce) {
         return;
-    }
-
-    public void SetHostDamageSource(BaseDamageSource damageSource) {
-        hostDamageSource = damageSource;
-    }
-    public void SetHostDamageable(BaseDamageable damageable) {
-        hostDamageable = damageable;
     }
 
     public virtual void OnDamageableUpdate(BaseDamageable damageable) {
@@ -75,8 +69,10 @@ public class Upgrade : ScriptableObject, IStatMod
     public virtual void OnDamageSourceUpdate(BaseDamageSource source) {
         return;
     }
-
-    public void GiveUpgrade() {
-        PlayerManager.Instance.combatant.AddUpgrade(this);
+    public void SetHostDamageSource(BaseDamageSource damageSource) {
+        hostDamageSource = damageSource;
+    }
+    public void SetHostDamageable(BaseDamageable damageable) {
+        hostDamageable = damageable;
     }
 }
