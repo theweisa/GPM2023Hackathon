@@ -22,6 +22,9 @@ public class UpgradeButton : MonoBehaviour
         }
         else {
             level.text = $"Level: {upgrade.level+1}";
+            if (upgrade.level+1 >= upgrade.maxLevel) {
+                level.text = $"Level: MAX";
+            }
         }
         
         currUpgrade = upgrade;

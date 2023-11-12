@@ -34,6 +34,12 @@ public class PlayerCombatant : BaseCombatant
         }
     }
 
+    public override Stat ApplyDamage(float damageTaken) {
+        Stat hp = base.ApplyDamage(damageTaken);
+        // call damage sound here
+        return hp;
+    }
+
     public override void InitDamageText(float dmg)
     {
         DamageText dmgTxt = Instantiate(ResourceManager.Instance.GetTextByName("DamageText"), transform.position, Quaternion.identity, InstantiationManager.Instance.otherParent).GetComponent<DamageText>();

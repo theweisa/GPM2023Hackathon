@@ -37,6 +37,10 @@ public class BaseDamageable : MonoBehaviour
         foreach (Upgrade u in upgrades) {
             u.OnApply(this);
         }
+        BaseDamageSource source = Global.FindComponent<BaseDamageSource>(gameObject);
+        if (source) {
+            source.Init(this);
+        }
     }
     virtual protected void Start() {
 
