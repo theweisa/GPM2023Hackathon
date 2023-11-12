@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerSecondary
       objectReference: {fileID: 0}
+    - target: {fileID: 3072528493608390672, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3326572672109225032, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Size.x
       value: 1.54
@@ -28,6 +32,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 2.47
       objectReference: {fileID: 0}
+    - target: {fileID: 3326572672109225032, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326572672109225032, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.65
@@ -35,6 +47,10 @@ PrefabInstance:
     - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_LocalScale.y
       value: 2.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970235359860201050, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7203213740273869412, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_LocalPosition.x
@@ -122,7 +138,7 @@ MonoBehaviour:
   host: {fileID: 0}
   contactedDamageables: []
   hitDamageables: []
-  damageScaling: 0.1
+  damageScaling: 1
   knockback: 70
   hasLifetime: 1
   lifetime: 1
