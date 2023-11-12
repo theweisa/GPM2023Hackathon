@@ -956,7 +956,7 @@ PrefabInstance:
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: myPrefab
       value: 
-      objectReference: {fileID: 1393273651288643045, guid: adacf3b37323e45ec8b1e94e3688925c, type: 3}
+      objectReference: {fileID: 569104617707018960, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
     - target: {fileID: 2673400106845078133, guid: f806f10c7399a45ad90efaf8272a0455, type: 3}
       propertyPath: waveTimer
       value: 5

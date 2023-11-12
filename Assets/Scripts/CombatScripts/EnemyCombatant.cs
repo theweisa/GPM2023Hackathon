@@ -21,12 +21,13 @@ public class EnemyCombatant : BaseCombatant
         base.FixedUpdate();
         MoveCombatant();
     }
-    void GetMoveDirection() {
+
+    public virtual void GetMoveDirection() {
         moveDirection = target.position - transform.position;
         moveDirection.Normalize();
     }
 
-    void MoveCombatant() {
+    public virtual void MoveCombatant() {
         if (!canMove) return;
         GetMoveDirection();
         //rb.velocity = GetStatValue(StatType.Spd) * moveDirection;
