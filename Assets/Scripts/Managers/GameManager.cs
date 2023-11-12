@@ -5,8 +5,18 @@ using UnityEditor;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
+[System.Serializable]
+public class WaveEvent
+{
+    [SerializeField] public float SpawnRate_SecPerEnemy;
+    [SerializeField] public float SpawnQuota; 
+    [SerializeField] public EnemyCombatant[] SelectedEnemies; 
+}
+
 public class GameManager : UnitySingleton<GameManager>
 {
+    [SerializeField] public WaveEvent[] EventQueue; //the queue of events that the game manager will cycle through 
+
     public float totalTimer = 300f;
     [SerializeField] float waveInterval; //user sets the values of how long it takes to trigger the wave & spawn rate
     [SerializeField] float spawnInterval;
@@ -53,15 +63,15 @@ public class GameManager : UnitySingleton<GameManager>
                 spawnTimer = spawnInterval;
             }
             //check if we've hit our quotient
-            if(curSpawnNum == spawnCount)
+            if(curSpawnNum != spawnCount)
             {
-                curSpawnNum = 0;
-                waveTimer = waveInterval; //reset the wave timer
-                print("NEXT WAVE");
+                spawnTimer -= Time.deltaTime;
             }
             else
             {
-                spawnTimer -= Time.deltaTime;
+                curSpawnNum = 0;
+                waveTimer = waveInterval; //reset the wave timer
+                print("NEXT WAVE"); 
             }
         }
     }
