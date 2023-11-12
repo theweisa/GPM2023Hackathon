@@ -47,7 +47,7 @@ public class Upgrade : ScriptableObject, IStatMod
     }
     public StatModifier GetStatModById(string id) {
         foreach (UpgradeStatMod u in statMods) {
-            if (u.id == id) {
+            if (u.id.ToLower() == id.ToLower()) {
                 return u.statMod;
             }
         }
@@ -59,24 +59,26 @@ public class Upgrade : ScriptableObject, IStatMod
         SetHostDamageable(damageable);
         InitUpgrade();
         damageable.AddModifier(GetStatModById("onApply"));
-        return;
     }
 
     // on enemy hit
     public virtual void OnHit(BaseDamageable damageable, BaseDamageSource source) {
-        damageable.AddModifier(GetStatModById("onApply"));
-        return;
+        damageable.AddModifier(GetStatModById("onHit"));
     }
 
     // on init of a damage source
     public virtual void OnDamageSource(BaseDamageSource source) {
         SetHostDamageSource(source);
-        return;
+        if (hostDamageable) {
+            hostDamageable.AddModifier(GetStatModById("onDamageSource"));
+        }
     }
 
     // on killing an enemy
     public virtual void OnKill(BaseDamageable damageable, BaseDamageSource source) {
-        return;
+        if (hostDamageable) {
+            hostDamageable.AddModifier(GetStatModById("onKill"));
+        }
     }
 
     // when the mod is unapplied and you need to potentially clean up
@@ -85,7 +87,7 @@ public class Upgrade : ScriptableObject, IStatMod
     }
 
     public virtual void OnHostHit(BaseDamageable damageable, BaseDamageSource souce) {
-        return;
+        damageable.AddModifier(GetStatModById("onHostHit"));
     }
 
     public virtual void OnDamageableUpdate(BaseDamageable damageable) {

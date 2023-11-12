@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackMeter : Meter
 {
 
-    public float regenPerSecond = 30f;
+    public float regenRatioPerSecond = 0.4f;
     public float regenCooldown = 1f;
     float regenTimer;
     // Start is called before the first frame update
@@ -13,7 +13,7 @@ public class AttackMeter : Meter
     protected override void Update()
     {
         if (regenTimer <= 0f && currentMeter < maxMeter) {
-            currentMeter = Mathf.Min(currentMeter + regenPerSecond * Time.deltaTime, maxMeter);
+            currentMeter = Mathf.Min(currentMeter + maxMeter*regenRatioPerSecond * Time.deltaTime, maxMeter);
             fill.localScale = new Vector3(currentMeter/maxMeter, fill.localScale.y, fill.localScale.z);
         }
         else if (regenTimer > 0) {

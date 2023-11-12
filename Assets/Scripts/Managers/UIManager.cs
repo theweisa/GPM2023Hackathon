@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIManager : UnitySingleton<UIManager>
@@ -7,6 +8,7 @@ public class UIManager : UnitySingleton<UIManager>
     public ExpBarUI expBar;
     public EnergyBarUI energyBar;
     public GameObject upgradesScreen;
+    public TMP_Text timerText;
     
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,15 @@ public class UIManager : UnitySingleton<UIManager>
     // Update is called once per frame
     void Update()
     {
-        
+        float timer = GameManager.Instance.totalTimer;
+        int mins = (int)(timer / 60f);
+        float s = timer % 60;
+        if (s < 10f) {
+            timerText.text = $"{mins}:0{s.ToString("F0")}";
+        }
+        else {
+            timerText.text = $"{mins}:{s.ToString("F0")}";
+        }
     }
 
     public void ShowUpgradesScreen() {
