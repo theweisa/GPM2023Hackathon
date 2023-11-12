@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class WaveEvent
@@ -28,14 +29,32 @@ public class GameManager : UnitySingleton<GameManager>
     [SerializeField] float spawnTimer;
     [SerializeField] float spawnRadius; //size of the circle that spawns enemies
     public bool startGame = false;
+    public bool winGame = false;
 
     public void StartGame() {
-        startGame = true;
+        if (Input.GetMouseButtonDown(0)) {
+            Time.timeScale = 1f;
+            startGame = true;
+            UIManager.Instance.menuScreen.gameObject.SetActive(false);
+            UIManager.Instance.expBar.gameObject.SetActive(true);
+            UIManager.Instance.energyBar.gameObject.SetActive(true);
+        }
+        
+    }
+    public void WinGame() {
+        Time.timeScale = 0;
+        winGame = true;
+        UIManager.Instance.menuScreen.gameObject.SetActive(true);
+        UIManager.Instance.menuText.text = "You Win!\nClick to Restart";
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        UIManager.Instance.menuText.text = "Click To Start";
+        UIManager.Instance.menuScreen.gameObject.SetActive(true);
+        UIManager.Instance.expBar.gameObject.SetActive(false);
+        UIManager.Instance.energyBar.gameObject.SetActive(false);
         //both timers should activate on game start
         waveTimer = 0;
         spawnTimer = 0;
@@ -47,7 +66,18 @@ public class GameManager : UnitySingleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-        if (!startGame) return;
+        if (Input.GetKeyDown(KeyCode.I)) {
+            WinGame();
+        }
+        if (!startGame) {
+            StartGame();
+            return;
+        }
+        else if (winGame) {
+            if (Input.GetMouseButtonDown(0)) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
         UpdateTimer();
         //every minute, create a wave
         waveTimer -= Time.deltaTime;
@@ -111,6 +141,7 @@ public class GameManager : UnitySingleton<GameManager>
     void UpdateTimer() {
         totalTimer -= Time.deltaTime;
         if (totalTimer <= 0) {
+            WinGame();
             Debug.Log("You Win!");
         }
     }

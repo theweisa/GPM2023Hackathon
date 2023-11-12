@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
         weaponSprite.sortingOrder = weapon.rotation.eulerAngles.z > 35 && weapon.rotation.eulerAngles.z < 125 ? combatant.sprite.sortingOrder-1 : combatant.sprite.sortingOrder+1;   
     }
     public void Move(InputAction.CallbackContext context) {
+        if (!GameManager.Instance.startGame) return;
         moveDirection = context.ReadValue<Vector2>();
         if (moveDirection != Vector2.zero) {
             combatant.anim.Play("playerRun", -1, 0f);
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     public void FirePrimary(InputAction.CallbackContext context) {
+        if (!GameManager.Instance.startGame) return;
         if (context.started && combatant.meter.currentMeter > 0f && Time.timeScale != 0) {
             PlayerPrimary primary = Instantiate(primaryAttack, firePoint.position, weapon.rotation, weapon).GetComponent<PlayerPrimary>();
             primary.Init(combatant);
@@ -91,6 +93,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void FireSecondary(InputAction.CallbackContext context) {
+        if (!GameManager.Instance.startGame) return;
         if (!context.started || combatant.meter.currentMeter <= 0f || Time.timeScale == 0) return;
         PlayerSecondary secondary = Instantiate(secondaryAttack, firePoint.position, weapon.rotation, InstantiationManager.Instance.damageSourceParent).GetComponent<PlayerSecondary>();
         secondary.InitProjectile(combatant, fireDirection);

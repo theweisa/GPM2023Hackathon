@@ -9,6 +9,8 @@ public class UIManager : UnitySingleton<UIManager>
     public EnergyBarUI energyBar;
     public GameObject upgradesScreen;
     public TMP_Text timerText;
+    public GameObject menuScreen;
+    public TMP_Text menuText;
     
     // Start is called before the first frame update
     void Start()
