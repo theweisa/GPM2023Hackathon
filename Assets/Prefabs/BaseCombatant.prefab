@@ -60,7 +60,11 @@ MonoBehaviour:
     value: 0
     baseValue: 0
   healthBar: {fileID: 2632545277584247935}
+  sprite: {fileID: 0}
+  shadow: {fileID: 0}
   rb: {fileID: 1731266932711159159}
+  coll: {fileID: 0}
+  active: 1
   canMove: 1
 --- !u!50 &1731266932711159159
 Rigidbody2D:
@@ -88,7 +92,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &2888750456022532576
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

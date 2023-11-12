@@ -17,6 +17,7 @@ public class TerrainManager : MonoBehaviour{
     [HideInInspector] public Vector2 currentGridPos = new Vector2(0,0);
 
     void Start(){
+        player = player ? player : PlayerManager.Instance.gameObject;
         if (player){ 
             _initialPos = new Vector3(Mathf.Round(player.transform.position.x), Mathf.Round(player.transform.position.y), 0);
         }
