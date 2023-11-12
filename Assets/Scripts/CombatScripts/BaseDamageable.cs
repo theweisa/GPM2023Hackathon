@@ -28,6 +28,7 @@ public class BaseDamageable : MonoBehaviour
         shadow = shadow ? shadow : transform.Find("Shadow").GetComponent<SpriteRenderer>();
         coll = coll ? coll : Global.FindComponent<Collider2D>(gameObject);
         InitStats();
+        StartCoroutine(OnSpawn());
         if (healthBar) {
             healthBar.maxMeter = GetStat(StatType.Hp).baseValue;
             healthBar.currentMeter = healthBar.maxMeter;
@@ -72,6 +73,10 @@ public class BaseDamageable : MonoBehaviour
             healthBar.SetMeter(hp.value, hp.baseValue);
         }
         Debug.Log($"{gameObject.name} hp: {hp.value} after {amount} healing");
+    }
+    
+    virtual public IEnumerator OnSpawn() {
+        yield return null;
     }
 
     virtual public IEnumerator OnDeath() {

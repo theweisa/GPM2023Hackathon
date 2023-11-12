@@ -46,6 +46,7 @@ public static class Global {
     }
     public static bool SetAlpha(SpriteRenderer renderer, float alpha) {
         if (renderer == null) {
+            Debug.Log("erm");
             return false;
         }
         Color prev = renderer.color;

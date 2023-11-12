@@ -17,8 +17,6 @@ public class GameManager : UnitySingleton<GameManager>
     [SerializeField] float spawnTimer;
     [SerializeField] float spawnRadius; //size of the circle that spawns enemies
 
-    [SerializeField] GameObject myPrefab;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +41,9 @@ public class GameManager : UnitySingleton<GameManager>
                 print("NEW ENEMY");
                 //spawn enemy at random location on a circle defined by user-given radius
                 Vector2 newPos = randomCirclePos(new Vector2(0,0), spawnRadius);
-                Instantiate(myPrefab, new Vector3(newPos.x, newPos.y, 1), Quaternion.identity);
+                GameObject enemy = ResourceManager.Instance.GetEnemyByName("ChaserEnemy");
+                if (!enemy) return;
+                Instantiate(enemy, newPos, Quaternion.identity, InstantiationManager.Instance.enemyParent);
                 spawnTimer = spawnInterval;
 
                 curSpawnNum += 1;

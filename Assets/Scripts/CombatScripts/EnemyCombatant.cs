@@ -11,8 +11,8 @@ public class EnemyCombatant : BaseCombatant
     public float movementMultiplier = 1000f;
     public Transform target;
 
-    protected override void Start() {
-        base.Start();
+    protected override void Awake() {
+        base.Awake();
         target = PlayerManager.Instance.transform;
     }
     // Update is called once per frame
@@ -20,6 +20,11 @@ public class EnemyCombatant : BaseCombatant
     {
         base.FixedUpdate();
         MoveCombatant();
+    }
+    public override IEnumerator OnSpawn() {
+        Global.Appear(sprite, 0.3f);
+        Global.Appear(shadow, 0.3f);
+        yield return base.OnSpawn();
     }
     void GetMoveDirection() {
         moveDirection = target.position - transform.position;
