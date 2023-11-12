@@ -25,15 +25,15 @@ public class Upgrade : ScriptableObject, IStatMod
     public int spawnWeighting = 10;
     public bool hasCooldown = false;
     [ShowIf("hasCooldown")] public float cooldown;
+    [HideInInspector] public float cooldownTimer;
     [HideInInspector] public BaseDamageSource hostDamageSource;
     [HideInInspector] public BaseDamageable hostDamageable;
-    float baseCooldown;
     // Start is called before the first frame update
     public virtual void InitUpgrade() {
         if (!hasCooldown) {
             cooldown = 0;
         }
-        baseCooldown = cooldown;
+        cooldownTimer = cooldown;
     }
     public virtual void OnLevelUp() {
         level++;
@@ -45,39 +45,51 @@ public class Upgrade : ScriptableObject, IStatMod
             hostDamageable.CalculateStats();
         }
     }
-    public StatModifier GetStatModById(string id) {
+    public List<StatModifier> GetStatModsById(string id) {
+        List<StatModifier> ret = new List<StatModifier>();
         foreach (UpgradeStatMod u in statMods) {
             if (u.id.ToLower() == id.ToLower()) {
-                return u.statMod;
+                ret.Add(u.statMod);
             }
         }
-        return null;
+        return ret;
+    }
+
+    public void AddStatMods(string modId) {
+        foreach(StatModifier m in GetStatModsById(modId)) {
+            hostDamageable.AddModifier(m);
+        }
+    }
+    public void AddStatMods(string modId, BaseDamageable damageable) {
+        foreach(StatModifier m in GetStatModsById(modId)) {
+            damageable.AddModifier(m);
+        }
     }
 
     // when the mod is first added to the form unit
     public virtual void OnApply(BaseDamageable damageable) {
         SetHostDamageable(damageable);
         InitUpgrade();
-        damageable.AddModifier(GetStatModById("onApply"));
+        AddStatMods("onApply", damageable);
     }
 
     // on enemy hit
     public virtual void OnHit(BaseDamageable damageable, BaseDamageSource source) {
-        damageable.AddModifier(GetStatModById("onHit"));
+        AddStatMods("onHit", damageable);
     }
 
     // on init of a damage source
     public virtual void OnDamageSource(BaseDamageSource source) {
         SetHostDamageSource(source);
         if (hostDamageable) {
-            hostDamageable.AddModifier(GetStatModById("onDamageSource"));
+            AddStatMods("onDamageSource", hostDamageable);
         }
     }
 
     // on killing an enemy
     public virtual void OnKill(BaseDamageable damageable, BaseDamageSource source) {
         if (hostDamageable) {
-            hostDamageable.AddModifier(GetStatModById("onKill"));
+            AddStatMods("onKill", hostDamageable);
         }
     }
 
@@ -87,12 +99,17 @@ public class Upgrade : ScriptableObject, IStatMod
     }
 
     public virtual void OnHostHit(BaseDamageable damageable, BaseDamageSource souce) {
-        damageable.AddModifier(GetStatModById("onHostHit"));
+        AddStatMods("onHostHit", damageable);
     }
 
     public virtual void OnDamageableUpdate(BaseDamageable damageable) {
         if (hasCooldown) {
-            cooldown = Mathf.Max(cooldown-Time.deltaTime, 0f);
+            cooldownTimer = Mathf.Max(cooldownTimer-Time.deltaTime, 0f);
+            if (cooldownTimer <= 0f) {
+                cooldownTimer = cooldown;
+                OnCooldownUp();
+            }
+            
         }
     }
 
@@ -104,5 +121,8 @@ public class Upgrade : ScriptableObject, IStatMod
     }
     public void SetHostDamageable(BaseDamageable damageable) {
         hostDamageable = damageable;
+    }
+    public virtual void OnCooldownUp() {
+
     }
 }

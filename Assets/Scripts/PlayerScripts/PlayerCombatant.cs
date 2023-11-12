@@ -26,6 +26,18 @@ public class PlayerCombatant : BaseCombatant
     protected override void Update()
     {
         base.Update();
+        if (Input.GetKeyDown(KeyCode.L)) {
+            LevelUp();
+        }
+        if (Input.GetKeyDown(KeyCode.E)) {
+            PlantTree();
+        }
+    }
+
+    public override void InitDamageText(float dmg)
+    {
+        DamageText dmgTxt = Instantiate(ResourceManager.Instance.GetTextByName("DamageText"), transform.position, Quaternion.identity, InstantiationManager.Instance.otherParent).GetComponent<DamageText>();
+        dmgTxt.Init(dmg, DamageText.TextType.Player);
     }
 
     public override IEnumerator OnDeath()

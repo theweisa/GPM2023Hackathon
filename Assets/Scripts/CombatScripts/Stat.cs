@@ -30,18 +30,30 @@ public class Stat {
     public void SetValue(float newValue) {
         value = newValue;
     }
+    public void SetBaseValue(float newValue) {
+        baseValue = newValue;
+        CalculateStat();
+    }
+
+    public void SetStat(float newValue) {
+        value = newValue;
+        baseValue = newValue;
+        CalculateStat();
+    }
 
     public float CalculateStat() {
         // this fucking shit piece of code was the damn issue
-        if (this.type == StatType.Hp) {
+        if (type == StatType.Hp) {
             float prevRatio = value/baseValue;
-            this.baseValue = CalculateValue(this);
+            Debug.Log("before: " + baseValue);
+            baseValue = CalculateValue(this);
+            Debug.Log("after: " + baseValue);
             value = baseValue * prevRatio;
-            return this.baseValue;
+            return baseValue;
         }
-        this.value = CalculateValue(this);
+        value = CalculateValue(this);
         //if (!canBeNegative) this.value = Mathf.Max(0f, this.value);
-        return this.value;
+        return value;
     }
 
     #region stat modifier code

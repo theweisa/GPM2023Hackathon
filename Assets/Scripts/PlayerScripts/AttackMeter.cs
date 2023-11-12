@@ -13,7 +13,8 @@ public class AttackMeter : Meter
     protected override void Update()
     {
         if (regenTimer <= 0f && currentMeter < maxMeter) {
-            currentMeter = Mathf.Min(currentMeter + maxMeter*regenRatioPerSecond * Time.deltaTime, maxMeter);
+            float meterGain = maxMeter*(regenRatioPerSecond + PlayerManager.Instance.combatant.GetStatValue(StatType.RegenSpeed));
+            currentMeter = Mathf.Min(currentMeter + meterGain * Time.deltaTime, maxMeter);
             fill.localScale = new Vector3(currentMeter/maxMeter, fill.localScale.y, fill.localScale.z);
         }
         else if (regenTimer > 0) {

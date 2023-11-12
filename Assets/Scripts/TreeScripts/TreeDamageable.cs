@@ -10,6 +10,20 @@ public class TreeDamageable : BaseDamageable
     public float pulseRate;
     float pulseTimer=0f;
     // Start is called before the first frame update
+
+    protected override void Awake() {
+        base.Awake();
+        Stat hp = GetStat(StatType.Hp);
+        Stat atk = GetStat(StatType.Atk);
+        //Debug.Log("hp mod: " + PlayerManager.Instance.combatant.GetStatValue(StatType.TreeHpMult));
+        hp.SetStat(hp.baseValue*(1+PlayerManager.Instance.combatant.GetStatValue(StatType.TreeHpMult)));
+        atk.SetStat(atk.baseValue+PlayerManager.Instance.combatant.GetStatValue(StatType.TreeAtkUp));
+        pulseRate *= 1+PlayerManager.Instance.combatant.GetStatValue(StatType.TreeFireRateMult);
+        if (PlayerManager.Instance.combatant) {
+            
+        }
+        
+    }
     public override IEnumerator OnSpawn()
     {
         Vector3 baseScale = sprite.transform.localScale;

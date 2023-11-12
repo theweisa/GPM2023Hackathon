@@ -34,6 +34,9 @@ public class BaseDamageable : MonoBehaviour
             healthBar.maxMeter = GetStat(StatType.Hp).baseValue;
             healthBar.currentMeter = healthBar.maxMeter;
         }
+        foreach (Upgrade u in upgrades) {
+            u.OnApply(this);
+        }
     }
     virtual protected void Start() {
 
@@ -53,22 +56,35 @@ public class BaseDamageable : MonoBehaviour
 
     virtual public void Damage(BaseDamageSource source) {
         float damageTaken = source.damage;
+        Stat dr = GetStat(StatType.DmgReduction);
+        if (dr != null) {
+            damageTaken *= 1+dr.value;
+        }
         if (damageTaken <= 0) return;
-        Stat hp = GetStat(StatType.Hp);
-        hp.SetValue(hp.value-damageTaken);
+        Stat hp = ApplyDamage(damageTaken);
         UpgradesOnHit(source);
         UpgradesOnSelfHit(source);
-        DamageText dmgTxt = Instantiate(ResourceManager.Instance.GetTextByName("DamageText"), transform.position, Quaternion.identity, InstantiationManager.Instance.otherParent).GetComponent<DamageText>();
-        dmgTxt.Init(damageTaken);
-        if (healthBar) {
-            healthBar.SetMeter(hp.value, hp.baseValue);
-        }
         source.Knockback(this);
-        Debug.Log($"{gameObject.name} hp: {hp.value} after {damageTaken} damage taken");
         if (hp.value <= 0 && active) {
             UpgradesOnKill(source);
             StartCoroutine(OnDeath());
         }
+    }
+
+    virtual public Stat ApplyDamage(float damageTaken) {
+        Stat hp = GetStat(StatType.Hp);
+        hp.SetValue(hp.value-damageTaken);
+        InitDamageText(damageTaken);
+        if (healthBar) {
+            healthBar.SetMeter(hp.value, hp.baseValue);
+        }
+        Debug.Log($"{gameObject.name} hp: {hp.value} after {damageTaken} damage taken");
+        return hp;
+    }
+
+    virtual public void InitDamageText(float dmg) {
+        DamageText dmgTxt = Instantiate(ResourceManager.Instance.GetTextByName("DamageText"), transform.position, Quaternion.identity, InstantiationManager.Instance.otherParent).GetComponent<DamageText>();
+        dmgTxt.Init(dmg);
     }
 
     virtual public void Heal(BaseDamageSource source) {
@@ -78,7 +94,8 @@ public class BaseDamageable : MonoBehaviour
     virtual public void Heal(float amount) {
         if (amount <= 0) return;
         Stat hp = GetStat(StatType.Hp);
-        hp.SetValue(hp.value+amount);
+        hp.SetValue(Mathf.Min(hp.value+amount, hp.baseValue));
+        //Debug.Log($"{hp.value}/{hp.baseValue}");
         DamageText healTxt = Instantiate(ResourceManager.Instance.GetTextByName("DamageText"), transform.position, Quaternion.identity, InstantiationManager.Instance.otherParent).GetComponent<DamageText>();
         healTxt.Init(amount, DamageText.TextType.Heal);
         if (healthBar) {
