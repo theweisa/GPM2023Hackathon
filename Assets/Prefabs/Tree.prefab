@@ -15,10 +15,14 @@ PrefabInstance:
     - target: {fileID: 564595109174636083, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 46434d7ee20f3e24a8c9e0989da09974, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 564595109174636083, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_SpriteSortPoint
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 564595109174636083, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1393273651288643045, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       propertyPath: m_Name
@@ -172,7 +176,36 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1393273651288643045, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
       insertIndex: 1
       addedObject: {fileID: 4820508310765347666}
+    - targetCorrespondingSourceObject: {fileID: 3045406860053591573, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8469065656814633771}
   m_SourcePrefab: {fileID: 100100000, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+--- !u!1 &180590478623825706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3045406860053591573, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
+  m_PrefabInstance: {fileID: 2937159985936263487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8469065656814633771
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180590478623825706}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5c0272f618259a408656bfe067d9a5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &885606628788954432 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2632545277584247935, guid: a6fbc8ec32c35e74d9fb4b97c0fe7ba2, type: 3}
