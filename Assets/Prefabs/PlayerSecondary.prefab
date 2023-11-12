@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1648136489141402292, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7630968d91e28b945b3084a0575ccacd, type: 2}
     - target: {fileID: 3072528493608390672, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Name
       value: PlayerSecondary
@@ -42,11 +46,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.65
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.47
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 4970235359860201050, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Layer
@@ -93,20 +117,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8218084805748586443, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1231292121, guid: 21d0b7ba7e5fd384da90dc7addb6dd30, type: 3}
+    - target: {fileID: 8218084805748586443, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Color.a
-      value: 0.22745098
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8218084805748586443, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Color.b
-      value: 0.5283019
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8218084805748586443, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Color.g
-      value: 0.5283019
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8218084805748586443, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_Color.r
-      value: 0.5283019
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 892757248866016366, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
@@ -138,6 +166,7 @@ MonoBehaviour:
   host: {fileID: 0}
   contactedDamageables: []
   hitDamageables: []
+  upgrades: []
   damageScaling: 1
   knockback: 70
   hasLifetime: 1
