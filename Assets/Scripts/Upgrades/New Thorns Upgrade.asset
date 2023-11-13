@@ -15,18 +15,18 @@ MonoBehaviour:
   statMods:
   - id: onApply
     statMod:
-      modValue: 0.1
+      modValue: 0.05
       baseModValue: 0
       modStat: 3
       modifierCalc: 0
       modifierType: 0
       modDuration: 0
       baseModTimer: 0
-    statLevelUp: 0.1
+    statLevelUp: 0.05
   image: {fileID: 21300000, guid: ec735562bd849ba498f124d3ffc2fb9b, type: 3}
   id: Bodily Purifying
   description: Take less damage and enemies that hit you take damage
-  levelUpDescription: +1 Thorns Damage +10% Damage Reduction
+  levelUpDescription: +1 Thorns Damage +5% Damage Reduction
   level: 1
   maxLevel: 5
   spawnWeighting: 10

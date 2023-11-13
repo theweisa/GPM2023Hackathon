@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6314276452bef944a73a9c496957b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attractMagnitude: 4000
+  attractMagnitude: 5000
   initialImpactForce: 20
   rb: {fileID: 3545621348153970947}
   radius: 0

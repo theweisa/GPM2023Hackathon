@@ -11,6 +11,7 @@ public class PlayerCombatant : BaseCombatant
     public float energy;
     public float energyThreshold;
     public float levelExpMultiplier = 1.2f;
+    public float energyMultiplier = 1.1f;
 
     public float exp = 0f;
     public float expThreshold;
@@ -26,12 +27,12 @@ public class PlayerCombatant : BaseCombatant
     protected override void Update()
     {
         base.Update();
-        if (Input.GetKeyDown(KeyCode.L)) {
+        /*if (Input.GetKeyDown(KeyCode.L)) {
             LevelUp();
         }
         if (Input.GetKeyDown(KeyCode.E)) {
             PlantTree();
-        }
+        }*/
     }
 
     public override Stat ApplyDamage(float damageTaken) {
@@ -80,6 +81,7 @@ public class PlayerCombatant : BaseCombatant
 
     void PlantTree() {
         Instantiate(tree, transform.position, Quaternion.identity, InstantiationManager.Instance.treeParent);
+        energyThreshold *= energyMultiplier;
     }
 
     void LevelUp() {

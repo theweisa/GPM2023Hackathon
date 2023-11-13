@@ -68,6 +68,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4370424165366632149, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_Size.x
+      value: 1.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370424165366632149, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_Size.y
+      value: 2.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370424165366632149, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.37
+      objectReference: {fileID: 0}
     - target: {fileID: 6228135154350775844, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_Controller
       value: 
@@ -81,8 +93,12 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6371744539575165835, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: stats.Array.data[1].value
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371744539575165835, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: stats.Array.data[2].value
-      value: 3.3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7027913178008970396, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_LocalScale.x

@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4540578365418194735, guid: a7e7e2a8ef27d4f4cbf01c78aef30e31, type: 3}
+      propertyPath: m_Size.x
+      value: 1.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540578365418194735, guid: a7e7e2a8ef27d4f4cbf01c78aef30e31, type: 3}
+      propertyPath: m_Size.y
+      value: 3.13
+      objectReference: {fileID: 0}
     - target: {fileID: 9107576816348934049, guid: a7e7e2a8ef27d4f4cbf01c78aef30e31, type: 3}
       propertyPath: fireRate
       value: 4
@@ -59,6 +67,14 @@ PrefabInstance:
     - target: {fileID: 9107576816348934049, guid: a7e7e2a8ef27d4f4cbf01c78aef30e31, type: 3}
       propertyPath: stopToAttack
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107576816348934049, guid: a7e7e2a8ef27d4f4cbf01c78aef30e31, type: 3}
+      propertyPath: stats.Array.data[0].value
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107576816348934049, guid: a7e7e2a8ef27d4f4cbf01c78aef30e31, type: 3}
+      propertyPath: stats.Array.data[1].value
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

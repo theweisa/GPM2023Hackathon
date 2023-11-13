@@ -84,6 +84,14 @@ PrefabInstance:
       propertyPath: targetTree
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6371744539575165835, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: stats.Array.data[0].value
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371744539575165835, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
+      propertyPath: stats.Array.data[1].value
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7027913178008970396, guid: d6ebbe0ba805f7542b9389eb687c55c5, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5

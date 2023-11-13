@@ -59,6 +59,7 @@ public class GameManager : UnitySingleton<GameManager>
     {
         UIManager.Instance.menuText.text = "Click To Start";
         UIManager.Instance.menuScreen.gameObject.SetActive(true);
+        UIManager.Instance.menuText.gameObject.SetActive(true);
         UIManager.Instance.expBar.gameObject.SetActive(false);
         UIManager.Instance.energyBar.gameObject.SetActive(false);
         //both timers should activate on game start

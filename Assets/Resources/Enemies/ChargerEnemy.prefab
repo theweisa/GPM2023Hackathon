@@ -171,7 +171,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: []
   - type: 1
-    value: 0
+    value: 10
     baseValue: 0
     modifiers: []
   - type: 2
