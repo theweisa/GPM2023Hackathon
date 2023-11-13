@@ -28,6 +28,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 3326572672109225032, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Size.x
+      value: 5.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326572672109225032, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Size.y
+      value: 3.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326572672109225032, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326572672109225032, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326572672109225032, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 3335054199853082920, guid: b3f035987f8bda144a08f8f2dab4f062, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1
@@ -155,7 +175,7 @@ MonoBehaviour:
   hitDamageables: []
   upgrades: []
   damageScaling: 1
-  knockback: 5
+  knockback: 30
   hasLifetime: 1
   lifetime: 1
   baseDamageScaling: 0

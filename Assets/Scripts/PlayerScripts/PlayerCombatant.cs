@@ -26,12 +26,12 @@ public class PlayerCombatant : BaseCombatant
     protected override void Update()
     {
         base.Update();
-        /*if (Input.GetKeyDown(KeyCode.L)) {
+        if (Input.GetKeyDown(KeyCode.L)) {
             LevelUp();
         }
         if (Input.GetKeyDown(KeyCode.E)) {
             PlantTree();
-        }*/
+        }
     }
 
     public override Stat ApplyDamage(float damageTaken) {
@@ -50,6 +50,7 @@ public class PlayerCombatant : BaseCombatant
     public override IEnumerator OnDeath()
     {
         yield return null;
+        GameManager.Instance.LostGame();
         Debug.Log("game over");
     }
 

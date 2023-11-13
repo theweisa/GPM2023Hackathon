@@ -21,12 +21,12 @@ public class EnergyBarUI : MonoBehaviour
 
     public void UpdateUI(float value, float maxValue) {
         float ratio = Mathf.Min(1f, value/maxValue);
-        energyText.text = $"Energy: {(ratio*100f).ToString("F1")}%";
+        energyText.text = $"Plant Tree: {(ratio*100f).ToString("F1")}%";
         LeanTween.scaleX(bar.gameObject, ratio, 0.7f).setEaseOutExpo();
     }
 
     public void ResetUI() {
-        energyText.text = $"Energy: 0.0%";
+        energyText.text = $"Plant Tree: 0.0%";
         bar.localScale = new Vector3(0f, bar.localScale.y, bar.localScale.z);
     }
 }

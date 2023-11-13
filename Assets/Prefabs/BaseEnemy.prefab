@@ -155,7 +155,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: []
   - type: 1
-    value: 3
+    value: 5
     baseValue: 0
     modifiers: []
   - type: 2
@@ -178,6 +178,7 @@ MonoBehaviour:
   movementMultiplier: 600
   target: {fileID: 0}
   targetTree: 0
+  targetedTree: {fileID: 0}
   tier: 1
 --- !u!114 &5537474089682428926
 MonoBehaviour:

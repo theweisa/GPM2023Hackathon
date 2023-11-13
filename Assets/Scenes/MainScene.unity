@@ -1009,6 +1009,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8823975589662583742, guid: 2671256d35f903e49833f80bf6357bf8, type: 3}
+      propertyPath: stats.Array.data[0].value
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823975589662583742, guid: 2671256d35f903e49833f80bf6357bf8, type: 3}
       propertyPath: stats.Array.data[10].type
       value: 10
       objectReference: {fileID: 0}
@@ -1027,6 +1031,10 @@ PrefabInstance:
     - target: {fileID: 8823975589662583742, guid: 2671256d35f903e49833f80bf6357bf8, type: 3}
       propertyPath: stats.Array.data[14].type
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823975589662583742, guid: 2671256d35f903e49833f80bf6357bf8, type: 3}
+      propertyPath: stats.Array.data[2].value
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8823975589662583742, guid: 2671256d35f903e49833f80bf6357bf8, type: 3}
       propertyPath: stats.Array.data[3].value
@@ -2179,6 +2187,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1209062791061003990, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
+      propertyPath: m_text
+      value: 'Plant Tree: 100.00%'
+      objectReference: {fileID: 0}
     - target: {fileID: 1209062791061003990, guid: 472e15b06a121455e834322d9b6a173a, type: 3}
       propertyPath: m_fontAsset
       value: 

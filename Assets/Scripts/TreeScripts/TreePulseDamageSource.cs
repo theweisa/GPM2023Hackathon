@@ -27,6 +27,7 @@ public class TreePulseDamageSource : BaseDamageSource
         else {
             damageable.Damage(this);
         }
+        Debug.Log("hit!");
         hitDamageables.Add(damageable);
         if (destroyOnContact) {
             StartCoroutine(OnDeath());

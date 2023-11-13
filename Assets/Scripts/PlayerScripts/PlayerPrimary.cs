@@ -17,10 +17,10 @@ public class PlayerPrimary : BaseMelee
     // Start is called before the first frame update
     protected override void Update() {
         base.Update();
-        if (!meterRef) return;
+        /*if (!meterRef) return;
         meterRef.DepleteMeter(meterPerSecond*Time.deltaTime, LeanTweenType.notUsed);
         if (meterRef.currentMeter <= 0f) {
             StartCoroutine(OnDeath());
-        }
+        }*/
     }
 }

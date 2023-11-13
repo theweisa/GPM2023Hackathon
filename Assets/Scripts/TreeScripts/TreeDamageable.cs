@@ -22,6 +22,12 @@ public class TreeDamageable : BaseDamageable
         AudioManager.Instance.PlayAudioChild(sounds[Random.Range(0, sounds.Count)].id, sounds);
         
     }
+
+    public override void InitDamageText(float dmg)
+    {
+        DamageText dmgTxt = Instantiate(ResourceManager.Instance.GetTextByName("DamageText"), transform.position, Quaternion.identity, InstantiationManager.Instance.otherParent).GetComponent<DamageText>();
+        dmgTxt.Init(dmg, DamageText.TextType.Player);
+    }
     public override IEnumerator OnSpawn()
     {
         Vector3 baseScale = sprite.transform.localScale;

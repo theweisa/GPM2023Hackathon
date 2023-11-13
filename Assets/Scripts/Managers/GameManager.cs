@@ -45,7 +45,13 @@ public class GameManager : UnitySingleton<GameManager>
         Time.timeScale = 0;
         winGame = true;
         UIManager.Instance.menuScreen.gameObject.SetActive(true);
-        UIManager.Instance.menuText.text = "You Win!\nClick to Restart";
+        UIManager.Instance.menuText.text = "Area Purified!\nClick to Restart";
+    }
+    public void LostGame() {
+        Time.timeScale = 0;
+        winGame = true;
+        UIManager.Instance.menuScreen.gameObject.SetActive(true);
+        UIManager.Instance.menuText.text = "Greenhouse Gasses Win...\nClick to Restart";
     }
 
     // Start is called before the first frame update

@@ -11,6 +11,7 @@ public class EnemyCombatant : BaseCombatant
     public float movementMultiplier = 1000f;
     public Transform target;
     public bool targetTree = false;
+    public GameObject targetedTree;
     public int tier = 1;
 
     protected override void Awake() {
@@ -48,16 +49,17 @@ public class EnemyCombatant : BaseCombatant
     }
 
     protected virtual void UpdateTarget() {
-        if (targetTree) {
+        if (targetTree && !targetedTree) {
             int size = InstantiationManager.Instance.treeParent.transform.childCount;
-            if (size != 0 && (!target || ReferenceEquals(target, PlayerManager.Instance.transform))) {
+            if (size != 0) {
                 target = InstantiationManager.Instance.treeParent.transform.GetChild(Random.Range(0, size));
+                targetedTree = target.gameObject;
             }
             else {
                 target = PlayerManager.Instance.transform;
             }
         }
-        else if (!target) {
+        else if (!targetTree) {
             target = PlayerManager.Instance.transform;
         }
     }
